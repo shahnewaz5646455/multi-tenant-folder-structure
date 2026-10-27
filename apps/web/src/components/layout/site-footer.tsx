@@ -49,7 +49,7 @@ export function SiteFooter(): JSX.Element {
             const title = t(`columns.${col.key}.title`);
             return (
               <nav key={col.key} aria-label={title} className="flex min-w-0 flex-col gap-2.5">
-                <p className="overline text-inverse-muted">{title}</p>
+                <p className="text-inverse-muted">{title}</p>
                 <ul className="flex flex-col gap-2.5">
                   {col.items.map((item) => (
                     <li key={item.labelKey}>
