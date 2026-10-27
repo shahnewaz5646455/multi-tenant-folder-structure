@@ -1,6 +1,7 @@
 import type { JSX } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { FeatureTile } from '@/components/marketing/feature-tile';
+import { SectionHeading } from '@/components/marketing/section-heading';
 import {
   TOOLKIT_FEATURES,
   TOOLKIT_HEADING,
@@ -15,15 +16,12 @@ export function ToolkitSection(): JSX.Element {
 
   return (
     <section className="w-full bg-background-canvas">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start gap-10 px-4 py-14 sm:items-center sm:px-6 lg:px-16 lg:py-20 xl:px-[120px]">
-        <div className="flex max-w-[720px] flex-col items-start gap-3 sm:items-center sm:text-center">
-          <p className="text-success">{TOOLKIT_HEADING.overline}</p>
-          <h2 className="display-lg text-foreground">{TOOLKIT_HEADING.title}</h2>
-          {/* Subtitle hidden on mobile per Figma */}
-          <p className="hidden text-base leading-6 text-muted-foreground sm:block">
-            {TOOLKIT_HEADING.subtitle}
-          </p>
-        </div>
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-10 px-4 py-14 sm:px-6 lg:px-16 lg:py-20 xl:px-[120px]">
+        <SectionHeading
+          overline={TOOLKIT_HEADING.overline}
+          title={TOOLKIT_HEADING.title}
+          width="narrow"
+        />
 
         {/* Mobile: 3 highlighted tiles + See-all link */}
         <div className="flex w-full flex-col gap-4 sm:hidden">

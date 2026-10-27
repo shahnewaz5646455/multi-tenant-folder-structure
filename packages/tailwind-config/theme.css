@@ -133,6 +133,15 @@
   letter-spacing: -0.0104166em;
 }
 
+/* Metric typography — large numeric values on tiles & plan cards.
+ * Figma Metric/lg 28/36 -0.25 (pricing card price). */
+@utility metric-lg {
+  font-size: 1.75rem;        /* 28px */
+  line-height: 2.25rem;      /* 36px */
+  font-weight: 600;
+  letter-spacing: -0.015625rem;
+}
+
 /* Overline typography — small uppercase label used by footer column titles.
  * Figma: Inter 600, 11/16, letter-spacing 0.5. Exposed as a utility so
  * components can write `className="overline"` instead of a 5-class soup. */

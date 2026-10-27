@@ -29,7 +29,7 @@ export function SectionHeading({
         className,
       )}
     >
-      <p className="text-success">{overline}</p>
+      <p className="text-success text-[11px] font-semibold">{overline}</p>
       <h2 className="display-lg text-foreground">{title}</h2>
       {subtitle ? (
         <p className="text-base leading-6 text-muted-foreground">{subtitle}</p>

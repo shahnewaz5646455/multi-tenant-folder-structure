@@ -8,7 +8,7 @@ export function FaqSection(): JSX.Element {
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-10 px-4 py-14 sm:px-6 lg:flex-row lg:items-start lg:gap-16 lg:px-16 lg:py-20 xl:px-[120px]">
         {/* Left column — heading + support + CTA */}
         <div className="flex min-w-0 flex-col gap-3 lg:w-[360px] lg:shrink-0">
-          <p className="text-success text-center">{FAQ_HEADING.overline}</p>
+          <p className="text-success text-left">{FAQ_HEADING.overline}</p>
           <h2 className="display-lg text-foreground">{FAQ_HEADING.title}</h2>
           <p className="text-sm leading-5 text-muted-foreground">{FAQ_HEADING.support}</p>
           <a
