@@ -1,0 +1,52 @@
+{
+  "tagline": "Everything a Bangladeshi seller needs to sell online and in-store — website, orders, courier, payments and AI.",
+  "ariaLanguage": "Language",
+  "ariaChat": "Chat with support",
+  "ariaStatus": "System status",
+  "copyright": "© {year} Ecom Manager. All rights reserved.",
+  "madeIn": "Made in Bangladesh",
+  "columns": {
+    "product": {
+      "title": "Product",
+      "pricing": "Pricing",
+      "templates": "Templates",
+      "demo": "Demo store",
+      "pos": "POS",
+      "ai": "AI tools"
+    },
+    "ecosystem": {
+      "title": "Ecosystem",
+      "experts": "Experts",
+      "funding": "Funding",
+      "learn": "Learn",
+      "affiliates": "Affiliates · up to 15% recurring"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About us",
+      "contact": "Contact",
+      "careers": "Careers",
+      "partners": "Partners"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms & conditions",
+      "privacy": "Privacy policy",
+      "refund": "Return & refund policy"
+    }
+  },
+  "offices": {
+    "dhaka": {
+      "title": "Dhaka (HQ)",
+      "body": "Level 7, House 42, Road 11, Banani, Dhaka 1213"
+    },
+    "chattogram": {
+      "title": "Chattogram",
+      "body": "GEC Circle, Chattogram 4000"
+    },
+    "support": {
+      "title": "Support",
+      "body": "support@ecommanager.com.bd · 09XXX-XXXXXX · 9 AM – 10 PM"
+    }
+  }
+}

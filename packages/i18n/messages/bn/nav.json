@@ -1,0 +1,17 @@
+{
+  "primary": "প্রধান",
+  "mobile": "মোবাইল নেভিগেশন",
+  "home": "ইকম ম্যানেজার হোম",
+  "logIn": "লগ ইন",
+  "startFree": "বিনামূল্যে শুরু",
+  "createYourStore": "স্টোর তৈরি করুন",
+  "items": {
+    "pricing": "মূল্য",
+    "templates": "টেমপ্লেট",
+    "experts": "বিশেষজ্ঞ",
+    "funding": "ফান্ডিং",
+    "learn": "শিখুন",
+    "affiliates": "অ্যাফিলিয়েট",
+    "aboutUs": "আমাদের সম্পর্কে"
+  }
+}

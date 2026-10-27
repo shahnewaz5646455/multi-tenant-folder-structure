@@ -9,7 +9,19 @@ export function isLocale(x: string): x is Locale {
   return (LOCALES as readonly string[]).includes(x);
 }
 
-export async function loadMessages(locale: Locale): Promise<Record<string, string>> {
-  const common = await import(`../messages/${locale}/common.json`);
-  return common.default;
+// Namespaces are per-file so each surface can be reviewed in isolation.
+// Each one lands at the top level of the returned object → `useTranslations('nav')`.
+const NAMESPACES = ['common', 'nav', 'footer'] as const;
+export type Namespace = (typeof NAMESPACES)[number];
+
+export type Messages = Record<Namespace, Record<string, unknown>>;
+
+export async function loadMessages(locale: Locale): Promise<Messages> {
+  const loaded = await Promise.all(
+    NAMESPACES.map(
+      async (ns) =>
+        [ns, (await import(`../messages/${locale}/${ns}.json`)).default as Record<string, unknown>] as const,
+    ),
+  );
+  return Object.fromEntries(loaded) as Messages;
 }

@@ -1,9 +1,18 @@
 {
-  "app.name": "ইকম ম্যানেজার",
-  "nav.dashboard": "ড্যাশবোর্ড",
-  "nav.orders": "অর্ডার",
-  "nav.products": "পণ্য",
-  "nav.customers": "গ্রাহক",
-  "action.save": "সংরক্ষণ",
-  "action.cancel": "বাতিল"
+  "app": {
+    "name": "ইকম ম্যানেজার"
+  },
+  "action": {
+    "save": "সংরক্ষণ",
+    "cancel": "বাতিল",
+    "openMenu": "মেনু খুলুন",
+    "closeMenu": "মেনু বন্ধ করুন"
+  },
+  "locale": {
+    "switcherAria": "ভাষা পরিবর্তন করুন",
+    "english": "English",
+    "bangla": "বাংলা",
+    "englishShort": "EN",
+    "banglaShort": "বাংলা"
+  }
 }

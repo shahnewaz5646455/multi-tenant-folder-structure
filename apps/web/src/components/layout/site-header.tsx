@@ -1,62 +1,59 @@
 import type { JSX } from 'react';
-import { Globe } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { SITE_NAV } from '@/config/site-nav';
+import { Link } from '@/i18n/navigation';
+import { LocaleSwitcher } from './locale-switcher';
 import { Logo } from './logo';
 import { MobileNav } from './mobile-nav';
-import { SITE_NAV } from '@/config/site-nav';
 
 export function SiteHeader(): JSX.Element {
+  const t = useTranslations('nav');
+
   return (
     <header className="sticky top-0 z-30 w-full border-b border-border bg-background">
       {/* Mobile row — ≤ lg */}
       <div className="flex h-15 items-center gap-2 px-4 lg:hidden">
         <Logo variant="full" />
         <div className="flex-1" />
-        <a
+        <Link
           href="#"
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
         >
-          Start free
-        </a>
+          {t('startFree')}
+        </Link>
         <MobileNav items={SITE_NAV} />
       </div>
 
       {/* Desktop row — ≥ lg */}
       <div className="mx-auto hidden h-18 max-w-[1440px] items-center gap-7 px-6 lg:flex lg:px-16 xl:px-[120px]">
-        <a href="/" aria-label="Ecom Manager home" className="shrink-0">
+        <Link href="/" aria-label={t('home')} className="shrink-0">
           <Logo variant="full" />
-        </a>
-        <nav aria-label="Primary">
+        </Link>
+        <nav aria-label={t('primary')}>
           <ul className="flex items-center gap-6 text-sm font-medium text-foreground">
             {SITE_NAV.map((item) => (
-              <li key={item.label}>
-                <a href={item.href} className="hover:text-primary">
-                  {item.label}
-                </a>
+              <li key={item.labelKey}>
+                <Link href={item.href} className="hover:text-primary">
+                  {t(`items.${item.labelKey}`)}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
         <div className="flex-1" />
-        <button
-          type="button"
-          className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground"
-          aria-label="Change language"
-        >
-          <Globe className="size-4" aria-hidden="true" />
-          EN · বাংলা
-        </button>
-        <a
+        <LocaleSwitcher variant="desktop" />
+        <Link
           href="#"
           className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium text-foreground hover:bg-muted"
         >
-          Log in
-        </a>
-        <a
+          {t('logIn')}
+        </Link>
+        <Link
           href="#"
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
         >
-          Create your store
-        </a>
+          {t('createYourStore')}
+        </Link>
       </div>
     </header>
   );

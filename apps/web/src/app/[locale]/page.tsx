@@ -1,17 +1,24 @@
 import type { JSX } from 'react';
-import { SiteHeader } from '@/components/layout/site-header';
+import { setRequestLocale } from 'next-intl/server';
 import { SiteFooter } from '@/components/layout/site-footer';
+import { SiteHeader } from '@/components/layout/site-header';
+import { CtaBandSection } from './_components/cta-band-section';
+import { FaqSection } from './_components/faq-section';
+import { GoLiveSection } from './_components/go-live-section';
 import { HeroSection } from './_components/hero-section';
 import { LiveStatsSection } from './_components/live-stats-section';
 import { PartnersSection } from './_components/partners-section';
-import { ToolkitSection } from './_components/toolkit-section';
-import { GoLiveSection } from './_components/go-live-section';
 import { TemplatesSection } from './_components/templates-section';
 import { TestimonialsSection } from './_components/testimonials-section';
-import { FaqSection } from './_components/faq-section';
-import { CtaBandSection } from './_components/cta-band-section';
+import { ToolkitSection } from './_components/toolkit-section';
 
-export default function HomePage(): JSX.Element {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function HomePage({ params }: Props): Promise<JSX.Element> {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <SiteHeader />

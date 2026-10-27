@@ -1,9 +1,14 @@
 import type { JSX } from 'react';
-import { Globe, MessageCircle, ExternalLink } from 'lucide-react';
+import { ExternalLink, Globe, MessageCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { FOOTER_COLUMNS, FOOTER_OFFICES } from '@/config/site-footer';
+import { Link } from '@/i18n/navigation';
 import { Logo } from './logo';
-import { FOOTER_COLUMNS, FOOTER_OFFICES, FOOTER_TAGLINE } from '@/config/site-footer';
 
 export function SiteFooter(): JSX.Element {
+  const t = useTranslations('footer');
+  const tCommon = useTranslations('common');
+
   return (
     <footer className="w-full bg-inverse text-inverse-foreground">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-10 px-4 pb-8 pt-10 sm:px-6 lg:px-16 lg:pt-16 xl:px-[120px]">
@@ -13,56 +18,73 @@ export function SiteFooter(): JSX.Element {
           <div className="flex flex-col gap-4">
             <span className="inline-flex items-center gap-2">
               <Logo variant="mark" />
-              <span className="text-base font-semibold leading-6 text-inverse-foreground">Ecom Manager</span>
+              <span className="text-base font-semibold leading-6 text-inverse-foreground">
+                {tCommon('app.name')}
+              </span>
             </span>
-            <p className="text-sm leading-5 text-inverse-muted">{FOOTER_TAGLINE}</p>
+            <p className="text-sm leading-5 text-inverse-muted">{t('tagline')}</p>
             <div className="flex items-start gap-3 text-inverse-muted">
-              <a href="/en" aria-label="Language" className="hover:text-inverse-foreground">
+              <Link href="/" aria-label={t('ariaLanguage')} className="hover:text-inverse-foreground">
                 <Globe className="size-5" aria-hidden="true" />
-              </a>
-              <a href="/support" aria-label="Chat with support" className="hover:text-inverse-foreground">
+              </Link>
+              <Link
+                href="/support"
+                aria-label={t('ariaChat')}
+                className="hover:text-inverse-foreground"
+              >
                 <MessageCircle className="size-5" aria-hidden="true" />
-              </a>
-              <a href="/status" aria-label="System status" className="hover:text-inverse-foreground">
+              </Link>
+              <Link
+                href="/status"
+                aria-label={t('ariaStatus')}
+                className="hover:text-inverse-foreground"
+              >
                 <ExternalLink className="size-5" aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Link columns */}
-          {FOOTER_COLUMNS.map((col) => (
-            <nav key={col.key} aria-label={col.title} className="flex min-w-0 flex-col gap-2.5">
-              <p className="overline text-inverse-muted">{col.title}</p>
-              <ul className="flex flex-col gap-2.5">
-                {col.items.map((item) => (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className="break-words text-sm leading-5 text-inverse-foreground hover:underline"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
+          {FOOTER_COLUMNS.map((col) => {
+            const title = t(`columns.${col.key}.title`);
+            return (
+              <nav key={col.key} aria-label={title} className="flex min-w-0 flex-col gap-2.5">
+                <p className="overline text-inverse-muted">{title}</p>
+                <ul className="flex flex-col gap-2.5">
+                  {col.items.map((item) => (
+                    <li key={item.labelKey}>
+                      <Link
+                        href={item.href}
+                        className="break-words text-sm leading-5 text-inverse-foreground hover:underline"
+                      >
+                        {t(`columns.${col.key}.${item.labelKey}`)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            );
+          })}
         </div>
 
         {/* Offices */}
         <div className="grid grid-cols-1 gap-6 border-t border-inverse-border pt-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           {FOOTER_OFFICES.map((office) => (
-            <div key={office.title} className="min-w-0">
-              <p className="text-xs font-medium leading-4 text-inverse-foreground">{office.title}</p>
-              <p className="break-words text-xs leading-4 text-inverse-muted">{office.body}</p>
+            <div key={office} className="min-w-0">
+              <p className="text-xs font-medium leading-4 text-inverse-foreground">
+                {t(`offices.${office}.title`)}
+              </p>
+              <p className="break-words text-xs leading-4 text-inverse-muted">
+                {t(`offices.${office}.body`)}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Copyright row */}
         <div className="flex flex-col gap-1 text-xs leading-4 text-inverse-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Ecom Manager. All rights reserved.</p>
-          <p>Made in Bangladesh</p>
+          <p>{t('copyright', { year: new Date().getFullYear() })}</p>
+          <p>{t('madeIn')}</p>
         </div>
       </div>
     </footer>

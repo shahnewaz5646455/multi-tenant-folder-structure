@@ -1,15 +1,13 @@
 export type NavItem = {
   href: string;
-  label: string;
+  /** Translation key, resolved against the caller's namespace. */
+  labelKey: string;
 };
 
 export type FooterColumn = {
+  /** Column id — also the translation sub-namespace under `footer.columns`. */
   key: string;
-  title: string;
   items: NavItem[];
 };
 
-export type OfficeInfo = {
-  title: string;
-  body: string;
-};
+export type OfficeKey = 'dhaka' | 'chattogram' | 'support';

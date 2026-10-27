@@ -1,9 +1,18 @@
 {
-  "app.name": "Ecom Manager",
-  "nav.dashboard": "Dashboard",
-  "nav.orders": "Orders",
-  "nav.products": "Products",
-  "nav.customers": "Customers",
-  "action.save": "Save",
-  "action.cancel": "Cancel"
+  "app": {
+    "name": "Ecom Manager"
+  },
+  "action": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "locale": {
+    "switcherAria": "Switch language",
+    "english": "English",
+    "bangla": "Bangla",
+    "englishShort": "EN",
+    "banglaShort": "বাংলা"
+  }
 }

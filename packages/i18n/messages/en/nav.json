@@ -1,0 +1,17 @@
+{
+  "primary": "Primary",
+  "mobile": "Mobile navigation",
+  "home": "Ecom Manager home",
+  "logIn": "Log in",
+  "startFree": "Start free",
+  "createYourStore": "Create your store",
+  "items": {
+    "pricing": "Pricing",
+    "templates": "Templates",
+    "experts": "Experts",
+    "funding": "Funding",
+    "learn": "Learn",
+    "affiliates": "Affiliates",
+    "aboutUs": "About us"
+  }
+}
