@@ -1,3 +1,10 @@
 @import 'tailwindcss';
 @import '@ecm/tailwind-config/theme.css';
 @import '@ecm/ui/styles.css';
+
+/* Always reserve space for the vertical scrollbar so content doesn't
+ * shift horizontally when document height crosses the viewport boundary
+ * (e.g. opening a long FAQ answer). */
+html {
+  scrollbar-gutter: stable;
+}

@@ -4,7 +4,7 @@
 import 'server-only';
 import { notFound, redirect } from 'next/navigation';
 import { can, type Permission, type StoreSession } from '@ecm/permissions';
-import { getStoreSession, getUserSession, type UserSession } from './session.ts';
+import { getStoreSession, getUserSession, type UserSession } from './session';
 
 export class ForbiddenError extends Error {
   constructor(public readonly permission: Permission) {

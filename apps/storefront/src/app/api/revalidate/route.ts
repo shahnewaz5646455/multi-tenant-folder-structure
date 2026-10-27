@@ -14,10 +14,14 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   // TODO: verify shared-secret signature from backend before trusting the body.
   const body = (await req.json()) as Body;
   const { tenantId, scope } = body;
-  if (scope === 'store') revalidateTag(tags.store(tenantId));
-  else if (scope === 'products') revalidateTag(tags.products(tenantId));
-  else if (scope === 'pages') revalidateTag(tags.pages(tenantId));
-  else if (scope === 'theme') revalidateTag(tags.theme(tenantId));
-  else if (typeof scope === 'object' && 'product' in scope) revalidateTag(tags.product(tenantId, scope.product));
+  // Next 16: revalidateTag now takes a second cacheLife profile.
+  // The backend pushes this after a merchant publish, so we expire the entry
+  // immediately — the next render will fetch fresh data.
+  const immediate = { expire: 0 };
+  if (scope === 'store') revalidateTag(tags.store(tenantId), immediate);
+  else if (scope === 'products') revalidateTag(tags.products(tenantId), immediate);
+  else if (scope === 'pages') revalidateTag(tags.pages(tenantId), immediate);
+  else if (scope === 'theme') revalidateTag(tags.theme(tenantId), immediate);
+  else if (typeof scope === 'object' && 'product' in scope) revalidateTag(tags.product(tenantId, scope.product), immediate);
   return NextResponse.json({ ok: true });
 }

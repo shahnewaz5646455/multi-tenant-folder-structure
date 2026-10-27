@@ -8,8 +8,10 @@
     "./button": "./src/button.tsx",
     "./input": "./src/input.tsx",
     "./card": "./src/card.tsx",
+    "./badge": "./src/badge.tsx",
     "./data-table": "./src/data-table.tsx",
     "./can": "./src/can.tsx",
+    "./cn": "./src/cn.ts",
     "./styles.css": "./src/styles.css"
   },
   "scripts": { "lint": "eslint .", "typecheck": "tsc --noEmit" },

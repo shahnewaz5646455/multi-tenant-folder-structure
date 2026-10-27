@@ -5,21 +5,141 @@
  *
  *   @import 'tailwindcss';
  *   @import '@ecm/tailwind-config/theme.css';
+ *
+ * Semantic token names match the Figma design-system variables so Figma
+ * exports map 1:1 to Tailwind utilities (--color-primary → bg-primary, etc.).
  */
 
 @theme {
-  /* Colour tokens — tenants override via inline CSS variables on the body. */
-  --color-brand-50: oklch(97% 0.02 265);
-  --color-brand-500: oklch(55% 0.17 265);
-  --color-brand-600: oklch(48% 0.17 265);
-  --color-brand-700: oklch(42% 0.15 265);
-  --color-brand-900: oklch(28% 0.10 265);
+  /* --- Surfaces --- */
+  --color-background: #ffffff;
+  --color-background-subdued: #f9fafb;
+  --color-background-canvas: #f4f6f8;
+  --color-foreground: #111827;
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7480;
+  --color-disabled: #9aa3ae;
 
-  /* Typography */
-  --font-sans: 'Inter', 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
-  --font-bn: 'Hind Siliguri', 'Noto Sans Bengali', ui-sans-serif, sans-serif;
+  /* --- Borders & focus --- */
+  --color-border: #e4e7eb;
+  --color-border-strong: #cdd2d8;
+  --color-ring: #3b82f6;
 
-  /* Radii, shadows */
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
+  /* --- Primary (tenant-overridable) --- */
+  --color-primary: #047857;
+  --color-primary-foreground: #ffffff;
+
+  /* Brand ramp — points at the primary green so legacy `brand-*` utilities
+   * keep working. Tenant themes override these three via @ecm/tenant/theme. */
+  --color-brand-50: #ecfdf5;
+  --color-brand-500: #10b981;
+  --color-brand-600: #047857;
+  --color-brand-700: #065f46;
+  --color-brand-900: #064e3b;
+
+  /* --- Inverse (dark surfaces: footer, dashboards sidebar) --- */
+  --color-inverse: #111827;
+  --color-inverse-foreground: #ffffff;
+  --color-inverse-muted: #9aa3ae;
+  --color-inverse-border: #6b7480;
+
+  /* --- Accents --- */
+  --color-accent-blue: #2563eb;
+  --color-accent-blue-subtle: #eff6ff;
+  --color-accent-orange: #f97316;
+  --color-accent-orange-subtle: #fff7ed;
+  --color-link: #2563eb;
+
+  /* --- Icons --- */
+  --color-icon: #4b5563;
+  --color-icon-muted: #9aa3ae;
+  --color-icon-primary: #047857;
+
+  /* --- Status --- */
+  --color-success: #047857;
+  --color-success-bg: #d1fae5;
+  --color-success-strong: #065f46;
+  --color-info: #1d4ed8;
+  --color-info-bg: #dbeafe;
+  --color-critical: #dc2626;
+  --color-critical-bg: #fee2e2;
+
+  /* --- Charts --- */
+  --color-chart-online: #2563eb;
+  --color-chart-cod: #059669;
+
+  /* --- Typography ---
+   * --font-inter and --font-hind are injected by next/font in the root layout.
+   * The sans stack lists Inter first (Latin) and Hind Siliguri second; because
+   * next/font scopes each font's @font-face unicode-range to its subset, the
+   * browser automatically uses Hind Siliguri for ৳ and Bengali characters
+   * while Latin stays on Inter. --font-bn is the explicit Bengali-only stack
+   * (use via `font-bn` utility when the whole string must render in Hind
+   * Siliguri regardless of codepoint). */
+  --font-sans: var(--font-inter), var(--font-hind), ui-sans-serif, system-ui, sans-serif;
+  --font-bn: var(--font-hind), 'Noto Sans Bengali', ui-sans-serif, sans-serif;
+
+  /* --- Radii --- */
+  --radius-md: 0.5rem;   /* 8px  */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px rgb(18 23 38 / 0.05), 0 1px 3px rgb(18 23 38 / 0.08);
+  --shadow-lg: 0 8px 8px -4px rgb(18 23 38 / 0.05), 0 20px 24px -4px rgb(18 23 38 / 0.12);
+
+  /* --- Animations --- */
+  --animate-accordion-down: accordion-down 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-accordion-up: accordion-up 200ms cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Radix Accordion height animation.
+ * Radix sets --radix-accordion-content-height on the content element to the
+ * measured natural height, so we can animate height from 0 → measured smoothly.
+ * Opacity is faded alongside so the appearance feels crisp, not stretchy. */
+@keyframes accordion-down {
+  from { height: 0; opacity: 0; }
+  to   { height: var(--radix-accordion-content-height); opacity: 1; }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to   { height: 0; opacity: 0; }
+}
+
+/* Display typography — hero headline and large stat values.
+ * Figma Display/xl 52/60 -2 (hero), Display/lg 32/40 -0.5 (sales amount),
+ * Heading/xl 24/32 -0.25 (stat tile values). */
+@utility display-xl {
+  font-size: 3.25rem;        /* 52px */
+  line-height: 3.75rem;      /* 60px */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+@utility display-lg {
+  /* Mobile scales down slightly so section titles don't dominate the viewport. */
+  font-size: 1.75rem;        /* 28px mobile */
+  line-height: 2.25rem;      /* 36px mobile */
+  font-weight: 600;
+  letter-spacing: -0.015625em;
+  @media (min-width: 40rem) {
+    font-size: 2rem;         /* 32px ≥ sm */
+    line-height: 2.5rem;     /* 40px ≥ sm */
+  }
+}
+@utility heading-xl {
+  font-size: 1.5rem;         /* 24px */
+  line-height: 2rem;         /* 32px */
+  font-weight: 600;
+  letter-spacing: -0.0104166em;
+}
+
+/* Overline typography — small uppercase label used by footer column titles.
+ * Figma: Inter 600, 11/16, letter-spacing 0.5. Exposed as a utility so
+ * components can write `className="overline"` instead of a 5-class soup. */
+@utility overline {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03125rem;
+  text-transform: uppercase;
 }
