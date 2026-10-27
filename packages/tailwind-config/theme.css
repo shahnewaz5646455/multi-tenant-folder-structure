@@ -69,15 +69,18 @@
   --color-chart-cod: #059669;
 
   /* --- Typography ---
-   * --font-inter and --font-hind are injected by next/font in the root layout.
-   * The sans stack lists Inter first (Latin) and Hind Siliguri second; because
-   * next/font scopes each font's @font-face unicode-range to its subset, the
-   * browser automatically uses Hind Siliguri for ৳ and Bengali characters
-   * while Latin stays on Inter. --font-bn is the explicit Bengali-only stack
-   * (use via `font-bn` utility when the whole string must render in Hind
-   * Siliguri regardless of codepoint). */
-  --font-sans: var(--font-inter), var(--font-hind), ui-sans-serif, system-ui, sans-serif;
-  --font-bn: var(--font-hind), 'Noto Sans Bengali', ui-sans-serif, sans-serif;
+   * --font-inter, --font-noto-bn, --font-hind are injected by next/font in the
+   * root layout. The sans stack is Latin-first: Inter → Noto Sans Bengali →
+   * Hind Siliguri. next/font scopes each @font-face unicode-range to its
+   * subset so the browser auto-picks the Bengali font for ৳ and Bengali
+   * characters while Latin stays on Inter.
+   *
+   * --font-bn is the explicit Bengali-first stack applied to <body> when
+   * lang="bn", so UI chrome itself (including numerals) renders in a Bengali
+   * font with proper weighted digits. Noto Sans Bengali is primary because
+   * its ০-৯ glyphs are better balanced at display sizes than Hind Siliguri's. */
+  --font-sans: var(--font-inter), var(--font-noto-bn), var(--font-hind), ui-sans-serif, system-ui, sans-serif;
+  --font-bn: var(--font-noto-bn), var(--font-hind), 'Noto Sans Bengali', ui-sans-serif, sans-serif;
 
   /* --- Radii --- */
   --radius-md: 0.5rem;   /* 8px  */
@@ -151,4 +154,16 @@
   font-weight: 600;
   letter-spacing: 0.03125rem;
   text-transform: uppercase;
+}
+
+/* Bengali typography overrides.
+ * The negative letter-spacing on display/metric utilities is a Latin
+ * tightening convention — it squishes Bengali characters and digits into an
+ * unreadable, stunted shape. Reset tracking to normal when the document is
+ * in Bengali so the big prices and headlines breathe correctly. */
+:lang(bn) .display-xl,
+:lang(bn) .display-lg,
+:lang(bn) .heading-xl,
+:lang(bn) .metric-lg {
+  letter-spacing: 0;
 }

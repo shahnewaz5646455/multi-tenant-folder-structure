@@ -7,12 +7,14 @@ import type { BillingCycle } from '@/types/marketing.types';
 export type BillingCycleToggleProps = {
   cycles: readonly BillingCycle[];
   defaultCycle: BillingCycle['key'];
+  ariaLabel: string;
   className?: string;
 };
 
 export function BillingCycleToggle({
   cycles,
   defaultCycle,
+  ariaLabel,
   className,
 }: BillingCycleToggleProps): JSX.Element {
   const [active, setActive] = useState<BillingCycle['key']>(defaultCycle);
@@ -20,7 +22,7 @@ export function BillingCycleToggle({
   return (
     <div
       role="radiogroup"
-      aria-label="Billing cycle"
+      aria-label={ariaLabel}
       className={cn(
         'grid w-full max-w-sm grid-cols-3 gap-0.5 rounded-xl bg-background-canvas p-[3px] sm:inline-flex sm:w-auto sm:max-w-none',
         className,

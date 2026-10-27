@@ -1,98 +1,25 @@
-import type { BillingCycle, Plan } from '@/types/marketing.types';
+/** Billing cycle keys for the Plans toggle. Each resolves under `pricing.cycles.<key>`. */
+export const BILLING_CYCLE_KEYS = ['monthly', 'half-yearly', 'yearly'] as const;
+export type BillingCycleKey = (typeof BILLING_CYCLE_KEYS)[number];
+export const DEFAULT_BILLING_CYCLE: BillingCycleKey = 'yearly';
 
-export const PRICING_HEADING = {
-  overline: 'PRICING',
-  title: 'Simple pricing that grows with your shop',
-  subtitle:
-    'Start free. Upgrade when you need more orders, staff or your own domain. All prices in BDT, VAT included.',
-} as const;
+/** Plan keys in display order. Each resolves under `pricing.plans.<key>`. */
+export const PLAN_KEYS = ['free', 'starter', 'pro', 'growth', 'enterprise'] as const;
+export type PlanKey = (typeof PLAN_KEYS)[number];
 
-export const BILLING_CYCLES: readonly BillingCycle[] = [
-  { key: 'monthly', label: 'Monthly' },
-  { key: 'half-yearly', label: '6 months', badge: 'save 10%' },
-  { key: 'yearly', label: 'Yearly', badge: 'save 25%' },
-] as const;
+/** Non-translatable attributes per plan: visual + routing concerns only. */
+export type PlanConfig = {
+  key: PlanKey;
+  featured?: boolean;
+  billingNoteTone?: 'default' | 'success';
+  ctaHref: string;
+  ctaVariant: 'primary' | 'secondary';
+};
 
-export const DEFAULT_BILLING_CYCLE: BillingCycle['key'] = 'yearly';
-
-export const PRICING_PLANS: readonly Plan[] = [
-  {
-    name: 'Free',
-    price: '৳ 0',
-    priceSuffix: '/month',
-    billingNote: 'Free forever · no card needed',
-    pitch: 'For trying things out.',
-    cta: { label: 'Start for free', href: '#', variant: 'secondary' },
-    features: [
-      '10 products',
-      '50 orders / month',
-      'Owner only',
-      '2% fee per order',
-      'ecom.bd subdomain',
-    ],
-  },
-  {
-    name: 'Starter',
-    price: '৳ 1,118',
-    priceSuffix: '/month',
-    billingNote: 'Billed ৳ 13,410 yearly · save ৳ 4,470',
-    billingNoteTone: 'success',
-    pitch: 'For new Facebook & web sellers.',
-    cta: { label: 'Start 14-day trial', href: '#', variant: 'secondary' },
-    features: [
-      '250 products',
-      '500 orders / month',
-      '3 staff · 2 warehouses',
-      '0.5% fee per order',
-      'Custom domain',
-    ],
-  },
-  {
-    name: 'Pro',
-    price: '৳ 2,243',
-    priceSuffix: '/month',
-    billingNote: 'Billed ৳ 26,910 yearly · save ৳ 8,970',
-    billingNoteTone: 'success',
-    pitch: 'For growing brands with a shop.',
-    cta: { label: 'Start 14-day trial', href: '#', variant: 'primary' },
-    featured: true,
-    badge: 'Most popular',
-    features: [
-      'Unlimited products',
-      '2,000 orders / month',
-      '10 staff · 5 warehouses',
-      '0.3% fee per order',
-      'POS + live chat support',
-    ],
-  },
-  {
-    name: 'Growth',
-    price: '৳ 4,493',
-    priceSuffix: '/month',
-    billingNote: 'Billed ৳ 53,910 yearly · save ৳ 17,970',
-    billingNoteTone: 'success',
-    pitch: 'For high-volume campaigns.',
-    cta: { label: 'Start 14-day trial', href: '#', variant: 'secondary' },
-    features: [
-      'Unlimited products',
-      '10,000 orders / month',
-      '25 staff · 10 warehouses',
-      '0.2% fee per order',
-      'Turbo server for sales',
-    ],
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    billingNote: 'Talk to our team',
-    pitch: 'For brands and chains.',
-    cta: { label: 'Contact sales', href: '#', variant: 'secondary' },
-    features: [
-      'Unlimited everything',
-      'Custom per-order fees',
-      'Dedicated account manager',
-      '99.9% uptime SLA',
-      'Custom integrations',
-    ],
-  },
+export const PRICING_PLANS: readonly PlanConfig[] = [
+  { key: 'free', ctaHref: '#', ctaVariant: 'secondary' },
+  { key: 'starter', billingNoteTone: 'success', ctaHref: '#', ctaVariant: 'secondary' },
+  { key: 'pro', featured: true, billingNoteTone: 'success', ctaHref: '#', ctaVariant: 'primary' },
+  { key: 'growth', billingNoteTone: 'success', ctaHref: '#', ctaVariant: 'secondary' },
+  { key: 'enterprise', ctaHref: '#', ctaVariant: 'secondary' },
 ] as const;

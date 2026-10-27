@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
-import { Hind_Siliguri, Inter } from 'next/font/google';
+import { Hind_Siliguri, Inter, Noto_Sans_Bengali } from 'next/font/google';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { LOCALES, type Locale } from '@ecm/i18n';
@@ -15,9 +15,18 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-/* Bengali font. subset=bengali scopes the @font-face unicode-range to the
- * Bengali block (U+0980–09FF). We also switch the whole body stack to
- * `font-bn` when lang="bn" so UI chrome itself renders in Hind Siliguri. */
+/* Primary Bengali font. Noto Sans Bengali has visually balanced Bengali
+ * numerals (০-৯) at display sizes — Hind Siliguri's digits are too thin and
+ * stunt the hero prices. We keep Hind Siliguri as a secondary fallback. */
+const notoBengali = Noto_Sans_Bengali({
+  subsets: ['bengali'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-noto-bn',
+});
+
+/* Secondary Bengali font (fallback). subset=bengali scopes the @font-face
+ * unicode-range to the Bengali block (U+0980–09FF). */
 const hindSiliguri = Hind_Siliguri({
   subsets: ['bengali'],
   weight: ['400', '500', '600', '700'],
@@ -48,7 +57,7 @@ export default async function LocaleLayout({ children, params }: Props): Promise
   const bodyFont = locale === 'bn' ? 'font-bn' : 'font-sans';
 
   return (
-    <html lang={locale} className={`${inter.variable} ${hindSiliguri.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${notoBengali.variable} ${hindSiliguri.variable}`}>
       <body className={`${bodyFont} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}

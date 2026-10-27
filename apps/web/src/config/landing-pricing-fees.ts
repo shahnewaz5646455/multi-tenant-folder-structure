@@ -1,28 +1,13 @@
-import { Download, Package, Repeat } from 'lucide-react';
-import type { FeeTile } from '@/types/marketing.types';
+import { Download, Package, Repeat, type LucideIcon } from 'lucide-react';
 
-export const PRICING_FEES_HEADING = {
-  title: 'Per-order fees',
-  subtitle: 'Charged only when you get an order, deducted from your payout.',
-} as const;
+export type FeeTileConfig = {
+  /** Key under `pricing.fees.items.<key>` for label / value / hint. */
+  key: string;
+  icon: LucideIcon;
+};
 
-export const PRICING_FEES: readonly FeeTile[] = [
-  {
-    icon: Package,
-    label: 'Physical products',
-    value: '0.2% – 2%',
-    hint: 'depends on your plan',
-  },
-  {
-    icon: Download,
-    label: 'Digital products',
-    value: '1%',
-    hint: 'e-books, courses, files',
-  },
-  {
-    icon: Repeat,
-    label: 'Resell products',
-    value: '৳ 10',
-    hint: 'per order, any plan',
-  },
+export const PRICING_FEES: readonly FeeTileConfig[] = [
+  { key: 'physical', icon: Package },
+  { key: 'digital', icon: Download },
+  { key: 'resell', icon: Repeat },
 ] as const;

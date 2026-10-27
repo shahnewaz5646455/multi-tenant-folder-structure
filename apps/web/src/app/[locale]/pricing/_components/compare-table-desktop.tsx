@@ -1,9 +1,9 @@
 import type { JSX } from 'react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@ecm/ui/cn';
 import {
   COMPARE_FEATURED_COLUMN,
   COMPARE_GROUPS,
-  COMPARE_HEADER_LABEL,
   COMPARE_PLAN_COLUMNS,
 } from '@/config/landing-pricing-compare';
 import { CompareCell } from './compare-cell';
@@ -11,11 +11,16 @@ import { CompareCell } from './compare-cell';
 const GRID_COLS = 'grid-cols-[minmax(0,2fr)_repeat(5,minmax(0,1fr))]';
 
 export function CompareTableDesktop(): JSX.Element {
+  const t = useTranslations('pricing.compare');
+  const headerLabel = t('label');
+  const includedLabel = t('cellIncluded');
+  const excludedLabel = t('cellExcluded');
+
   return (
     <div
       className="hidden w-full overflow-hidden rounded-lg border border-border bg-background shadow-sm md:block"
       role="table"
-      aria-label={COMPARE_HEADER_LABEL}
+      aria-label={headerLabel}
     >
       {/* Head row */}
       <div
@@ -26,7 +31,7 @@ export function CompareTableDesktop(): JSX.Element {
         )}
       >
         <p role="columnheader" className="min-w-0 text-base font-semibold leading-6 text-foreground">
-          {COMPARE_HEADER_LABEL}
+          {headerLabel}
         </p>
         {COMPARE_PLAN_COLUMNS.map((plan) => {
           const isFeatured = plan === COMPARE_FEATURED_COLUMN;
@@ -39,25 +44,22 @@ export function CompareTableDesktop(): JSX.Element {
                 isFeatured ? 'text-accent-orange' : 'text-foreground',
               )}
             >
-              {plan}
+              {t(`planLabels.${plan}`)}
             </p>
           );
         })}
       </div>
 
       {COMPARE_GROUPS.map((group) => (
-        <div key={group.title} role="rowgroup">
-          <div
-            role="row"
-            className="border-b border-border bg-background-subdued px-4 py-2"
-          >
+        <div key={group.key} role="rowgroup">
+          <div role="row" className="border-b border-border bg-background-subdued px-4 py-2">
             <p role="columnheader" className="overline text-muted-foreground">
-              {group.title}
+              {t(`groups.${group.key}.title`)}
             </p>
           </div>
-          {group.rows.map((row) => (
+          {group.rowKeys.map((rowKey) => (
             <div
-              key={row.label}
+              key={rowKey}
               role="row"
               className={cn(
                 'grid items-center border-b border-border px-4 py-2 last:border-b-0',
@@ -65,10 +67,11 @@ export function CompareTableDesktop(): JSX.Element {
               )}
             >
               <p role="rowheader" className="min-w-0 pr-2 text-sm leading-5 text-foreground">
-                {row.label}
+                {t(`groups.${group.key}.rows.${rowKey}.label`)}
               </p>
               {COMPARE_PLAN_COLUMNS.map((plan) => {
                 const isFeatured = plan === COMPARE_FEATURED_COLUMN;
+                const value = t(`groups.${group.key}.rows.${rowKey}.values.${plan}`);
                 return (
                   <div
                     key={plan}
@@ -78,7 +81,11 @@ export function CompareTableDesktop(): JSX.Element {
                       isFeatured && 'bg-accent-orange-subtle',
                     )}
                   >
-                    <CompareCell value={row.values[plan] ?? false} />
+                    <CompareCell
+                      value={value}
+                      includedLabel={includedLabel}
+                      excludedLabel={excludedLabel}
+                    />
                   </div>
                 );
               })}

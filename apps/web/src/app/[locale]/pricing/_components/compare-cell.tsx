@@ -1,31 +1,22 @@
 import type { JSX } from 'react';
 import { Check, Minus } from 'lucide-react';
-import type { CompareValue } from '@/types/marketing.types';
 
 export type CompareCellProps = {
-  value: CompareValue;
+  value: string;
+  includedLabel: string;
+  excludedLabel: string;
 };
 
-/** Renders a comparison cell's atomic value: text, included (check) or absent (minus). */
-export function CompareCell({ value }: CompareCellProps): JSX.Element {
-  if (value === true) {
+/** Renders a comparison cell's atomic value. Sentinels: "✓" = included, "✗" = absent. */
+export function CompareCell({ value, includedLabel, excludedLabel }: CompareCellProps): JSX.Element {
+  if (value === '✓') {
     return (
-      <>
-        <Check
-          className="size-[18px] text-icon-primary"
-          strokeWidth={2.5}
-          aria-label="Included"
-        />
-      </>
+      <Check className="size-[18px] text-icon-primary" strokeWidth={2.5} aria-label={includedLabel} />
     );
   }
-  if (value === false) {
+  if (value === '✗') {
     return (
-      <Minus
-        className="size-[18px] text-icon-muted"
-        strokeWidth={2.5}
-        aria-label="Not included"
-      />
+      <Minus className="size-[18px] text-icon-muted" strokeWidth={2.5} aria-label={excludedLabel} />
     );
   }
   return <span className="text-sm leading-5 text-foreground">{value}</span>;

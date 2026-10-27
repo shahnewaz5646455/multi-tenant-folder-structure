@@ -1,0 +1,211 @@
+{
+  "overline": "PRICING",
+  "title": "Simple pricing that grows with your shop",
+  "subtitle": "Start free. Upgrade when you need more orders, staff or your own domain. All prices in BDT, VAT included.",
+  "billingAria": "Billing cycle",
+  "cycles": {
+    "monthly": { "label": "Monthly" },
+    "half-yearly": { "label": "6 months", "badge": "save 10%" },
+    "yearly": { "label": "Yearly", "badge": "save 25%" }
+  },
+  "plans": {
+    "free": {
+      "name": "Free",
+      "price": "৳ 0",
+      "priceSuffix": "/month",
+      "billingNote": "Free forever · no card needed",
+      "pitch": "For trying things out.",
+      "ctaLabel": "Start for free",
+      "features": [
+        "10 products",
+        "50 orders / month",
+        "Owner only",
+        "2% fee per order",
+        "ecom.bd subdomain"
+      ]
+    },
+    "starter": {
+      "name": "Starter",
+      "price": "৳ 1,118",
+      "priceSuffix": "/month",
+      "billingNote": "Billed ৳ 13,410 yearly · save ৳ 4,470",
+      "pitch": "For new Facebook & web sellers.",
+      "ctaLabel": "Start 14-day trial",
+      "features": [
+        "250 products",
+        "500 orders / month",
+        "3 staff · 2 warehouses",
+        "0.5% fee per order",
+        "Custom domain"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "৳ 2,243",
+      "priceSuffix": "/month",
+      "billingNote": "Billed ৳ 26,910 yearly · save ৳ 8,970",
+      "pitch": "For growing brands with a shop.",
+      "ctaLabel": "Start 14-day trial",
+      "badge": "Most popular",
+      "features": [
+        "Unlimited products",
+        "2,000 orders / month",
+        "10 staff · 5 warehouses",
+        "0.3% fee per order",
+        "POS + live chat support"
+      ]
+    },
+    "growth": {
+      "name": "Growth",
+      "price": "৳ 4,493",
+      "priceSuffix": "/month",
+      "billingNote": "Billed ৳ 53,910 yearly · save ৳ 17,970",
+      "pitch": "For high-volume campaigns.",
+      "ctaLabel": "Start 14-day trial",
+      "features": [
+        "Unlimited products",
+        "10,000 orders / month",
+        "25 staff · 10 warehouses",
+        "0.2% fee per order",
+        "Turbo server for sales"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Custom",
+      "priceSuffix": "",
+      "billingNote": "Talk to our team",
+      "pitch": "For brands and chains.",
+      "ctaLabel": "Contact sales",
+      "features": [
+        "Unlimited everything",
+        "Custom per-order fees",
+        "Dedicated account manager",
+        "99.9% uptime SLA",
+        "Custom integrations"
+      ]
+    }
+  },
+  "fees": {
+    "title": "Per-order fees",
+    "subtitle": "Charged only when you get an order, deducted from your payout.",
+    "items": {
+      "physical": { "label": "Physical products", "value": "0.2% – 2%", "hint": "depends on your plan" },
+      "digital": { "label": "Digital products", "value": "1%", "hint": "e-books, courses, files" },
+      "resell": { "label": "Resell products", "value": "৳ 10", "hint": "per order, any plan" }
+    }
+  },
+  "compare": {
+    "label": "Compare all features",
+    "mobileAria": "Plan to compare",
+    "cellIncluded": "Included",
+    "cellExcluded": "Not included",
+    "planLabels": {
+      "free": "Free",
+      "starter": "Starter",
+      "pro": "Pro",
+      "growth": "Growth",
+      "enterprise": "Enterprise"
+    },
+    "groups": {
+      "selling": {
+        "title": "Selling",
+        "rows": {
+          "products": {
+            "label": "Products",
+            "values": { "free": "10", "starter": "250", "pro": "Unlimited", "growth": "Unlimited", "enterprise": "Unlimited" }
+          },
+          "ordersPerMonth": {
+            "label": "Orders per month",
+            "values": { "free": "50", "starter": "500", "pro": "2,000", "growth": "10,000", "enterprise": "Unlimited" }
+          },
+          "feePhysical": {
+            "label": "Per-order fee (physical)",
+            "values": { "free": "2%", "starter": "0.5%", "pro": "0.3%", "growth": "0.2%", "enterprise": "Custom" }
+          },
+          "resell": {
+            "label": "Resell products",
+            "values": { "free": "✓", "starter": "✓", "pro": "✓", "growth": "✓", "enterprise": "✓" }
+          }
+        }
+      },
+      "store": {
+        "title": "Store & branding",
+        "rows": {
+          "customDomain": {
+            "label": "Custom domain",
+            "values": { "free": "✗", "starter": "✓", "pro": "✓", "growth": "✓", "enterprise": "✓" }
+          },
+          "removeBranding": {
+            "label": "Remove \"Powered by Ecom Manager\"",
+            "values": { "free": "✗", "starter": "✗", "pro": "✓", "growth": "✓", "enterprise": "✓" }
+          }
+        }
+      },
+      "operations": {
+        "title": "Operations",
+        "rows": {
+          "staff": {
+            "label": "Staff accounts",
+            "values": { "free": "1", "starter": "3", "pro": "10", "growth": "25", "enterprise": "Unlimited" }
+          },
+          "warehouses": {
+            "label": "Warehouses",
+            "values": { "free": "1", "starter": "2", "pro": "5", "growth": "10", "enterprise": "Unlimited" }
+          },
+          "pos": {
+            "label": "POS",
+            "values": { "free": "✗", "starter": "✗", "pro": "✓", "growth": "✓", "enterprise": "✓" }
+          }
+        }
+      },
+      "marketing": {
+        "title": "Marketing & growth",
+        "rows": {
+          "aiActions": {
+            "label": "AI actions per month",
+            "values": { "free": "50", "starter": "500", "pro": "2,000", "growth": "10,000", "enterprise": "Custom" }
+          },
+          "fbCapi": {
+            "label": "Facebook Conversions API",
+            "values": { "free": "✗", "starter": "✓", "pro": "✓", "growth": "✓", "enterprise": "✓" }
+          }
+        }
+      },
+      "payments": {
+        "title": "Payments & delivery",
+        "rows": {
+          "securePay": {
+            "label": "SecurePay",
+            "values": { "free": "✗", "starter": "✓", "pro": "✓", "growth": "✓", "enterprise": "✓" }
+          },
+          "courierIntegrations": {
+            "label": "Courier integrations",
+            "values": { "free": "1", "starter": "All", "pro": "All", "growth": "All", "enterprise": "All" }
+          }
+        }
+      }
+    }
+  },
+  "faq": {
+    "title": "Pricing questions",
+    "entries": {
+      "trial": {
+        "q": "What happens when the trial ends?",
+        "a": "You move to the Free plan automatically. Nothing is deleted; products over the Free limit are hidden until you upgrade."
+      },
+      "changePlan": {
+        "q": "Can I change plans later?",
+        "a": "Yes. Upgrades apply immediately with credit for unused days. Downgrades take effect at the end of your billing period."
+      },
+      "payment": {
+        "q": "How do I pay?",
+        "a": "bKash, Nagad, Rocket or card. Auto-pay is optional; we send a reminder 3 days before renewal."
+      },
+      "courier": {
+        "q": "Are courier charges included?",
+        "a": "No. Courier charges are billed by the courier. We show the cost before you book."
+      }
+    }
+  }
+}
