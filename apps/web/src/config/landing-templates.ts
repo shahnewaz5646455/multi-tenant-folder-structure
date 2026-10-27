@@ -25,5 +25,5 @@ export const TEMPLATES_FEATURED: readonly ThemeEntry[] = [
 
 export const TEMPLATES_SEE_ALL = {
   label: 'See all 52 templates',
-  href: '/templates',
+  href: '#',
 } as const;

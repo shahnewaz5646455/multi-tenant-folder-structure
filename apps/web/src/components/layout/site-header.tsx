@@ -12,7 +12,7 @@ export function SiteHeader(): JSX.Element {
         <Logo variant="full" />
         <div className="flex-1" />
         <a
-          href="/signup"
+          href="#"
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
         >
           Start free
@@ -28,7 +28,7 @@ export function SiteHeader(): JSX.Element {
         <nav aria-label="Primary">
           <ul className="flex items-center gap-6 text-sm font-medium text-foreground">
             {SITE_NAV.map((item) => (
-              <li key={item.href}>
+              <li key={item.label}>
                 <a href={item.href} className="hover:text-primary">
                   {item.label}
                 </a>
@@ -46,13 +46,13 @@ export function SiteHeader(): JSX.Element {
           EN · বাংলা
         </button>
         <a
-          href="/login"
+          href="#"
           className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium text-foreground hover:bg-muted"
         >
           Log in
         </a>
         <a
-          href="/signup"
+          href="#"
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
         >
           Create your store

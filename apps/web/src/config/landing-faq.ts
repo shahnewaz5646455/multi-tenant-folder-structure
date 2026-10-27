@@ -4,7 +4,7 @@ export const FAQ_HEADING = {
   overline: 'FAQ',
   title: 'Questions sellers ask us',
   support: 'Still unsure? Talk to us on WhatsApp or call 09XXX-XXXXXX, 9 AM – 10 PM.',
-  cta: { label: 'Contact sales', href: '/contact' },
+  cta: { label: 'Contact sales', href: '#' },
 } as const;
 
 export const FAQ_ENTRIES: readonly FaqEntry[] = [

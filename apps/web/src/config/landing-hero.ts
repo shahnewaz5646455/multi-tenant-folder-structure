@@ -5,8 +5,8 @@ export const HERO_COPY = {
   headline: 'Launch your online shop in minutes — sell everywhere in Bangladesh',
   subhead:
     'Website, orders, courier booking, bKash & COD payments, POS and AI tools in one place. Built for Facebook sellers and growing brands.',
-  primaryCta: { href: '/signup', label: 'Start for free' },
-  secondaryCta: { href: '/demo', label: 'View demo store' },
+  primaryCta: { href: '#', label: 'Start for free' },
+  secondaryCta: { href: '#', label: 'View demo store' },
   trust: [
     'No credit card required',
     'Free plan forever',

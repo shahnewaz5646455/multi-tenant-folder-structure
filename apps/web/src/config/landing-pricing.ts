@@ -22,7 +22,7 @@ export const PRICING_PLANS: readonly Plan[] = [
     priceSuffix: '/month',
     billingNote: 'Free forever · no card needed',
     pitch: 'For trying things out.',
-    cta: { label: 'Start for free', href: '/signup', variant: 'secondary' },
+    cta: { label: 'Start for free', href: '#', variant: 'secondary' },
     features: [
       '10 products',
       '50 orders / month',
@@ -38,7 +38,7 @@ export const PRICING_PLANS: readonly Plan[] = [
     billingNote: 'Billed ৳ 13,410 yearly · save ৳ 4,470',
     billingNoteTone: 'success',
     pitch: 'For new Facebook & web sellers.',
-    cta: { label: 'Start 14-day trial', href: '/signup?plan=starter', variant: 'secondary' },
+    cta: { label: 'Start 14-day trial', href: '#', variant: 'secondary' },
     features: [
       '250 products',
       '500 orders / month',
@@ -54,7 +54,7 @@ export const PRICING_PLANS: readonly Plan[] = [
     billingNote: 'Billed ৳ 26,910 yearly · save ৳ 8,970',
     billingNoteTone: 'success',
     pitch: 'For growing brands with a shop.',
-    cta: { label: 'Start 14-day trial', href: '/signup?plan=pro', variant: 'primary' },
+    cta: { label: 'Start 14-day trial', href: '#', variant: 'primary' },
     featured: true,
     badge: 'Most popular',
     features: [
@@ -72,7 +72,7 @@ export const PRICING_PLANS: readonly Plan[] = [
     billingNote: 'Billed ৳ 53,910 yearly · save ৳ 17,970',
     billingNoteTone: 'success',
     pitch: 'For high-volume campaigns.',
-    cta: { label: 'Start 14-day trial', href: '/signup?plan=growth', variant: 'secondary' },
+    cta: { label: 'Start 14-day trial', href: '#', variant: 'secondary' },
     features: [
       'Unlimited products',
       '10,000 orders / month',
@@ -86,7 +86,7 @@ export const PRICING_PLANS: readonly Plan[] = [
     price: 'Custom',
     billingNote: 'Talk to our team',
     pitch: 'For brands and chains.',
-    cta: { label: 'Contact sales', href: '/contact-sales', variant: 'secondary' },
+    cta: { label: 'Contact sales', href: '#', variant: 'secondary' },
     features: [
       'Unlimited everything',
       'Custom per-order fees',

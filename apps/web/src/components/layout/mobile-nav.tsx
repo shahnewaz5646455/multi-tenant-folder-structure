@@ -75,7 +75,7 @@ export function MobileNav({ items }: MobileNavProps): JSX.Element {
         <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Primary">
           <ul className="flex flex-col gap-1">
             {items.map((item) => (
-              <li key={item.href}>
+              <li key={item.label}>
                 <a
                   href={item.href}
                   onClick={close}
@@ -107,7 +107,7 @@ export function MobileNav({ items }: MobileNavProps): JSX.Element {
         {/* Sticky footer: auth CTAs */}
         <div className="flex flex-col gap-3 border-t border-border bg-background-subdued px-4 py-4">
           <a
-            href="/login"
+            href="#"
             onClick={close}
             className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border-strong bg-background text-sm font-medium text-foreground hover:bg-muted"
           >
@@ -115,7 +115,7 @@ export function MobileNav({ items }: MobileNavProps): JSX.Element {
             Log in
           </a>
           <a
-            href="/signup"
+            href="#"
             onClick={close}
             className="inline-flex h-11 items-center justify-center rounded-md bg-primary text-sm font-medium text-primary-foreground hover:bg-brand-700"
           >

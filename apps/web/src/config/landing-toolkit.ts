@@ -28,7 +28,7 @@ export const TOOLKIT_MOBILE_HIGHLIGHT_TITLES: readonly string[] = [
   'AI tools',
 ] as const;
 
-export const TOOLKIT_SEE_ALL = { label: 'See all 12 tools', href: '/features' } as const;
+export const TOOLKIT_SEE_ALL = { label: 'See all 12 tools', href: '#' } as const;
 
 export const TOOLKIT_FEATURES: readonly FeatureTileData[] = [
   {
