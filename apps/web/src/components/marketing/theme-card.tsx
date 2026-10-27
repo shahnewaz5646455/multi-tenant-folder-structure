@@ -8,6 +8,7 @@ export type ThemeCardProps = {
   niche: string;
   tone: ThemeTone;
   previewHref: string;
+  previewLabel: string;
   className?: string;
 };
 
@@ -27,6 +28,7 @@ export function ThemeCard({
   niche,
   tone,
   previewHref,
+  previewLabel,
   className,
 }: ThemeCardProps): JSX.Element {
   return (
@@ -47,7 +49,7 @@ export function ThemeCard({
           href={previewHref}
           className="inline-flex h-7 w-full items-center justify-center rounded-md border border-border-strong bg-background px-3 py-1 text-xs font-medium text-foreground hover:bg-muted"
         >
-          Preview demo store
+          {previewLabel}
         </a>
       </div>
     </article>

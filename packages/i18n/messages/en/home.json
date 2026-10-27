@@ -1,0 +1,225 @@
+{
+  "hero": {
+    "badge": "New · AI writer & fraud check built in",
+    "headline": "Launch your online shop in minutes — sell everywhere in Bangladesh",
+    "subhead": "Website, orders, courier booking, bKash & COD payments, POS and AI tools in one place. Built for Facebook sellers and growing brands.",
+    "primaryCta": "Start for free",
+    "secondaryCta": "View demo store",
+    "trust": {
+      "noCard": "No credit card required",
+      "freeForever": "Free plan forever",
+      "liveIn60": "Store live in 60 seconds"
+    },
+    "dashboard": {
+      "today": "Today",
+      "live": "Live"
+    },
+    "kpis": {
+      "sales": { "label": "Sales", "value": "৳ 48,350" },
+      "orders": { "label": "Orders", "value": "32" },
+      "visitors": { "label": "Visitors", "value": "1,284" }
+    },
+    "toast": {
+      "title": "New order #1049",
+      "meta": "৳ 2,450 · COD · Pathao booked"
+    }
+  },
+  "liveStats": {
+    "indicator": {
+      "full": "Live on Ecom Manager · updated 10:45 AM · refreshes every 15 minutes",
+      "short": "Live · updated 10:45 AM"
+    },
+    "salesSplit": {
+      "label": "Sales today",
+      "total": "৳ 2,14,60,000",
+      "onlineLabel": "Online",
+      "onlineValue": "৳ 86.4 L",
+      "codLabel": "COD",
+      "codValue": "৳ 1.28 Cr"
+    },
+    "mobile": {
+      "ordersToday": { "label": "Orders today", "value": "18,420" },
+      "salesToday": { "label": "Sales today", "value": "৳ 2.14 Cr" },
+      "activeShops": { "label": "Active shops", "value": "8,920" },
+      "verifiedReviews": { "label": "Verified reviews", "value": "3,240" }
+    },
+    "desktop": {
+      "ordersToday": { "label": "Orders today", "value": "18,420" },
+      "ordersThisWeek": { "label": "Orders this week", "value": "1,12,860" },
+      "newShopsToday": { "label": "New shops today", "value": "146" },
+      "activeShops": { "label": "Active shops", "value": "8,920" },
+      "totalShops": { "label": "Total shops", "value": "24,310" },
+      "totalOrders": { "label": "Total orders", "value": "48,62,000" },
+      "verifiedReviews": { "label": "Verified reviews", "value": "3,240" },
+      "avgRating": { "label": "Average merchant rating", "value": "4.8" }
+    }
+  },
+  "partners": {
+    "heading": "Works with the couriers and payment methods your customers already use"
+  },
+  "toolkit": {
+    "overline": "ALL-IN-ONE TOOLKIT",
+    "title": "Everything you need to run your shop",
+    "subtitle": "Stop juggling spreadsheets, courier websites and Messenger. Ecom Manager connects them all.",
+    "seeAll": "See all 12 tools",
+    "features": {
+      "shipping": {
+        "title": "Shipping & delivery",
+        "description": "Delivery zones, charges and free-delivery rules for all 64 districts."
+      },
+      "inventory": {
+        "title": "Inventory",
+        "description": "Stock across warehouses with low-stock alerts and AI forecasts."
+      },
+      "orders": {
+        "title": "Orders",
+        "description": "One list for web, Facebook, POS and manual orders."
+      },
+      "ai": {
+        "title": "AI tools",
+        "description": "Write product pages, fill SEO and flag risky COD orders."
+      },
+      "website": {
+        "title": "Website builder",
+        "description": "Drag-and-drop themes made for Bangladeshi shops."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Live sales, top products, districts and custom reports."
+      },
+      "payments": {
+        "title": "Payments",
+        "description": "COD, bKash, Nagad, Rocket, cards and SecurePay escrow."
+      },
+      "courier": {
+        "title": "Courier booking",
+        "description": "Book Pathao, RedX or Steadfast in one click and print labels."
+      },
+      "marketing": {
+        "title": "SEO & marketing",
+        "description": "Pixel, Conversions API, GA4, sitemap and cart recovery."
+      },
+      "invoices": {
+        "title": "Invoices",
+        "description": "Branded A4 invoices and thermal receipts, Bangla or English."
+      },
+      "pos": {
+        "title": "POS",
+        "description": "Sell in your shop with the same stock, cash and bKash."
+      },
+      "resell": {
+        "title": "Resell",
+        "description": "Sell supplier products without keeping stock."
+      }
+    }
+  },
+  "goLive": {
+    "overline": "GO LIVE IN 3 STEPS",
+    "title": "From sign-up to first order in one evening",
+    "footnote": "Mobile app for merchants is coming later — App Store and Google Play links will appear here.",
+    "steps": {
+      "account": {
+        "title": "Create your account",
+        "description": "Sign up with your phone number. Verify with an SMS code — no card needed."
+      },
+      "setup": {
+        "title": "Set up your store",
+        "description": "Pick a theme, add your logo and colours. Your link rahimfashion.ecom.bd is live instantly."
+      },
+      "sell": {
+        "title": "Add products & sell",
+        "description": "Add products or resell supplier items, turn on bKash & COD, and share your link."
+      }
+    }
+  },
+  "templates": {
+    "overline": "TEMPLATES",
+    "title": "Beautiful stores for every niche",
+    "subtitle": "Preview any template as a real demo store — no sign-up needed.",
+    "seeAll": "See all 52 templates",
+    "ariaCategories": "Template categories",
+    "previewButton": "Preview demo store",
+    "categories": {
+      "all": "All",
+      "lifestyle": "Lifestyle",
+      "electronics": "Electronics",
+      "cosmetics": "Cosmetics",
+      "books": "Books",
+      "organic": "Organic",
+      "sports-toys": "Sports & toys"
+    },
+    "featured": {
+      "fashionStreet": {
+        "name": "Fashion Street",
+        "niche": "Lifestyle · 8 templates"
+      },
+      "gadgetHub": {
+        "name": "Gadget Hub",
+        "niche": "Electronics · 9 templates"
+      },
+      "glowBeauty": {
+        "name": "Glow Beauty",
+        "niche": "Cosmetics · 6 templates"
+      },
+      "dailyBazar": {
+        "name": "Daily Bazar",
+        "niche": "Organic & grocery · 7 templates"
+      }
+    }
+  },
+  "testimonials": {
+    "overline": "MERCHANT STORIES",
+    "title": "Loved by 3,240 verified merchants",
+    "items": {
+      "rahim": {
+        "quote": "“We moved from Facebook-only selling to our own website in one evening. Courier booking alone saves us two hours a day.”",
+        "name": "Rahim Ahmed",
+        "meta": "Rahim Fashion, Dhaka · 1,248 orders"
+      },
+      "sharmin": {
+        "quote": "“The AI fraud check stopped 40 fake COD orders last month. That's real money saved on returns.”",
+        "name": "Sharmin Akter",
+        "meta": "Glow by Sharmin, Chattogram · cosmetics"
+      },
+      "kamrul": {
+        "quote": "“I run my shop counter and website from the same stock. The POS works even when the internet drops.”",
+        "name": "Kamrul Hasan",
+        "meta": "Gadget Point, Sylhet · electronics"
+      }
+    }
+  },
+  "faq": {
+    "overline": "FAQ",
+    "title": "Questions sellers ask us",
+    "support": "Still unsure? Talk to us on WhatsApp or call 09XXX-XXXXXX, 9 AM – 10 PM.",
+    "cta": "Contact sales",
+    "entries": {
+      "card": {
+        "q": "Do I need a credit card to start?",
+        "a": "No. The Free plan needs no card. Upgrade any time with bKash, Nagad or card — you only pay when you are ready."
+      },
+      "domain": {
+        "q": "Can I use my own domain like rahimfashion.com?",
+        "a": "Yes, on Starter and above. Connect it in a few minutes; HTTPS is free and automatic."
+      },
+      "providers": {
+        "q": "Which couriers and payment methods are supported?",
+        "a": "Pathao, RedX, Steadfast, Paperfly and more. Payments: COD, bKash, Nagad, Rocket, cards via SSLCOMMERZ, and SecurePay."
+      },
+      "fees": {
+        "q": "Is there a fee per order?",
+        "a": "Each plan has a small per-order fee by product type. See Pricing for the exact rates."
+      },
+      "bangla": {
+        "q": "Can I sell in Bangla?",
+        "a": "Yes. Your store, invoices and SMS can be in Bangla, English or both."
+      }
+    }
+  },
+  "ctaBand": {
+    "title": "Start selling today — free",
+    "subtitle": "Your store is ready in 60 seconds. No credit card required.",
+    "primary": "Create your store",
+    "secondary": "Talk to sales"
+  }
+}

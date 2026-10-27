@@ -5,10 +5,12 @@ import type { SalesSplit } from '@/types/marketing.types';
 export type SalesSplitCardProps = {
   label: string;
   data: SalesSplit;
+  onlineLabel: string;
+  codLabel: string;
   className?: string;
 };
 
-export function SalesSplitCard({ label, data, className }: SalesSplitCardProps): JSX.Element {
+export function SalesSplitCard({ label, data, onlineLabel, codLabel, className }: SalesSplitCardProps): JSX.Element {
   return (
     <div
       className={cn(
@@ -27,11 +29,11 @@ export function SalesSplitCard({ label, data, className }: SalesSplitCardProps):
       <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs leading-4 text-muted-foreground">
         <li className="flex items-center gap-1.5">
           <span className="inline-block size-2 rounded-full bg-chart-online" aria-hidden="true" />
-          Online {data.online.value} ({data.online.percent}%)
+          {onlineLabel} {data.online.value} ({data.online.percent}%)
         </li>
         <li className="flex items-center gap-1.5">
           <span className="inline-block size-2 rounded-full bg-chart-cod" aria-hidden="true" />
-          COD {data.cod.value} ({data.cod.percent}%)
+          {codLabel} {data.cod.value} ({data.cod.percent}%)
         </li>
       </ul>
     </div>

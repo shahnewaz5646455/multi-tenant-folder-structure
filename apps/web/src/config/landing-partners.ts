@@ -1,11 +1,9 @@
 import type { Provider } from '@/types/marketing.types';
 
-export const PARTNERS_HEADING =
-  'Works with the couriers and payment methods your customers already use';
-
 /**
  * Placeholder provider tiles — brand hex values are intentional (per Figma
  * "brand hex, not tokens"). Replace with real SVG logos when assets arrive.
+ * Names are brands, not translated.
  */
 export const PARTNERS: readonly Provider[] = [
   { name: 'bKash', initials: 'bK', tileHex: '#e2136e' },

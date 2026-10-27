@@ -1,32 +1,27 @@
-import { Star } from 'lucide-react';
-import type { SalesSplit, Stat } from '@/types/marketing.types';
-
-export const LIVE_INDICATOR = {
-  text: 'Live on Ecom Manager · updated 10:45 AM · refreshes every 15 minutes',
-  shortText: 'Live · updated 10:45 AM',
-} as const;
-
-/** Compact 4-tile stat selection shown on mobile only (per mobile Figma). */
-export const MOBILE_LIVE_STATS: readonly Stat[] = [
-  { value: '18,420', label: 'Orders today' },
-  { value: '৳ 2.14 Cr', label: 'Sales today' },
-  { value: '8,920', label: 'Active shops' },
-  { value: '3,240', label: 'Verified reviews' },
+/** Keys for the compact 4-tile stat selection shown on mobile (per Figma). */
+export const MOBILE_STAT_KEYS = [
+  'ordersToday',
+  'salesToday',
+  'activeShops',
+  'verifiedReviews',
 ] as const;
+export type MobileStatKey = (typeof MOBILE_STAT_KEYS)[number];
 
-export const SALES_SPLIT: SalesSplit = {
-  total: '৳ 2,14,60,000',
-  online: { value: '৳ 86.4 L', percent: 40 },
-  cod: { value: '৳ 1.28 Cr', percent: 60 },
-};
-
-export const LIVE_STATS: readonly Stat[] = [
-  { value: '18,420', label: 'Orders today' },
-  { value: '1,12,860', label: 'Orders this week' },
-  { value: '146', label: 'New shops today' },
-  { value: '8,920', label: 'Active shops' },
-  { value: '24,310', label: 'Total shops' },
-  { value: '48,62,000', label: 'Total orders' },
-  { value: '3,240', label: 'Verified reviews' },
-  { value: '4.8', label: 'Average merchant rating', icon: Star },
+/** Keys for the 8 stat tiles shown on desktop beside the SalesSplitCard. */
+export const DESKTOP_STAT_KEYS = [
+  'ordersToday',
+  'ordersThisWeek',
+  'newShopsToday',
+  'activeShops',
+  'totalShops',
+  'totalOrders',
+  'verifiedReviews',
+  'avgRating',
 ] as const;
+export type DesktopStatKey = (typeof DESKTOP_STAT_KEYS)[number];
+
+/** Which desktop stat gets the star icon treatment. */
+export const DESKTOP_RATING_STAT_KEY = 'avgRating' as const;
+
+/** Share-bar percents for the SalesSplitCard. Must sum to 100. */
+export const SALES_SPLIT_PERCENTS = { online: 40, cod: 60 } as const;

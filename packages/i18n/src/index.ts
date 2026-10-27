@@ -11,7 +11,7 @@ export function isLocale(x: string): x is Locale {
 
 // Namespaces are per-file so each surface can be reviewed in isolation.
 // Each one lands at the top level of the returned object → `useTranslations('nav')`.
-const NAMESPACES = ['common', 'nav', 'footer'] as const;
+const NAMESPACES = ['common', 'nav', 'footer', 'home'] as const;
 export type Namespace = (typeof NAMESPACES)[number];
 
 export type Messages = Record<Namespace, Record<string, unknown>>;

@@ -6,15 +6,17 @@ import type { ChartBar, KpiTile } from '@/types/marketing.types';
 export type DashboardPreviewProps = {
   kpis: readonly KpiTile[];
   bars: readonly ChartBar[];
+  todayLabel: string;
+  liveLabel: string;
 };
 
-export function DashboardPreview({ kpis, bars }: DashboardPreviewProps): JSX.Element {
+export function DashboardPreview({ kpis, bars, todayLabel, liveLabel }: DashboardPreviewProps): JSX.Element {
   return (
     <div className="flex h-full w-full flex-col gap-3 overflow-hidden rounded-xl bg-background p-5 shadow-lg">
       <div className="flex items-center">
-        <h3 className="text-base font-semibold leading-6 text-foreground">Today</h3>
+        <h3 className="text-base font-semibold leading-6 text-foreground">{todayLabel}</h3>
         <div className="flex-1" />
-        <Badge className='px-1 text-xs' tone="success">Live</Badge>
+        <Badge className='px-1 text-xs' tone="success">{liveLabel}</Badge>
       </div>
 
       <div className="flex gap-3">

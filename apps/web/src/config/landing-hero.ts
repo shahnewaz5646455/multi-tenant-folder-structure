@@ -1,24 +1,17 @@
-import type { ChartBar, KpiTile } from '@/types/marketing.types';
+import type { ChartBar } from '@/types/marketing.types';
 
-export const HERO_COPY = {
-  badge: 'New · AI writer & fraud check built in',
-  headline: 'Launch your online shop in minutes — sell everywhere in Bangladesh',
-  subhead:
-    'Website, orders, courier booking, bKash & COD payments, POS and AI tools in one place. Built for Facebook sellers and growing brands.',
-  primaryCta: { href: '#', label: 'Start for free' },
-  secondaryCta: { href: '#', label: 'View demo store' },
-  trust: [
-    'No credit card required',
-    'Free plan forever',
-    'Store live in 60 seconds',
-  ],
+/** Translation keys for the three KPI tiles inside the hero dashboard. */
+export const HERO_KPI_KEYS = ['sales', 'orders', 'visitors'] as const;
+export type HeroKpiKey = (typeof HERO_KPI_KEYS)[number];
+
+/** Translation keys for the three trust-row items under the hero CTAs. */
+export const HERO_TRUST_KEYS = ['noCard', 'freeForever', 'liveIn60'] as const;
+export type HeroTrustKey = (typeof HERO_TRUST_KEYS)[number];
+
+export const HERO_CTAS = {
+  primary: { href: '#' },
+  secondary: { href: '#' },
 } as const;
-
-export const HERO_KPIS: readonly KpiTile[] = [
-  { label: 'Sales', value: '৳ 48,350' },
-  { label: 'Orders', value: '32' },
-  { label: 'Visitors', value: '1,284' },
-] as const;
 
 /** Figma heights (px) at the 420px visual frame. Normalised to percent at render time. */
 export const HERO_CHART_BARS: readonly ChartBar[] = [
@@ -33,8 +26,3 @@ export const HERO_CHART_BARS: readonly ChartBar[] = [
   { online: 72, cod: 104 },
   { online: 80, cod: 120 },
 ] as const;
-
-export const HERO_TOAST = {
-  title: 'New order #1049',
-  meta: '৳ 2,450 · COD · Pathao booked',
-} as const;
