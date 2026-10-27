@@ -1,0 +1,9 @@
+{
+  "app.name": "ইকম ম্যানেজার",
+  "nav.dashboard": "ড্যাশবোর্ড",
+  "nav.orders": "অর্ডার",
+  "nav.products": "পণ্য",
+  "nav.customers": "গ্রাহক",
+  "action.save": "সংরক্ষণ",
+  "action.cancel": "বাতিল"
+}

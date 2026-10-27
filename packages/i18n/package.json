@@ -1,0 +1,19 @@
+{
+  "name": "@ecm/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./messages/*": "./messages/*"
+  },
+  "scripts": { "lint": "eslint .", "typecheck": "tsc --noEmit" },
+  "devDependencies": {
+    "@ecm/eslint-config": "*",
+    "@ecm/typescript-config": "*"
+  },
+  "peerDependencies": {
+    "next-intl": "^4.0.0"
+  }
+}

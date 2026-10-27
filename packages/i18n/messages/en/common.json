@@ -1,0 +1,9 @@
+{
+  "app.name": "Ecom Manager",
+  "nav.dashboard": "Dashboard",
+  "nav.orders": "Orders",
+  "nav.products": "Products",
+  "nav.customers": "Customers",
+  "action.save": "Save",
+  "action.cancel": "Cancel"
+}

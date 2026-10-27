@@ -1,0 +1,11 @@
+{
+  "name": "@ecm/page-schema",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": { ".": "./src/index.ts", "./blocks": "./src/blocks.ts" },
+  "scripts": { "lint": "eslint .", "typecheck": "tsc --noEmit" },
+  "dependencies": { "@ecm/validation": "*", "zod": "^3.23.0" },
+  "devDependencies": { "@ecm/eslint-config": "*", "@ecm/typescript-config": "*" }
+}

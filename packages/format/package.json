@@ -1,0 +1,22 @@
+{
+  "name": "@ecm/format",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./money": "./src/money.tsx",
+    "./datetime": "./src/datetime.tsx"
+  },
+  "scripts": { "lint": "eslint .", "typecheck": "tsc --noEmit" },
+  "devDependencies": {
+    "@ecm/eslint-config": "*",
+    "@ecm/typescript-config": "*",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+/*
+ * Shared Tailwind v4 theme — design tokens exposed as CSS variables so tenant
+ * brand colours and fonts swap at runtime (blueprint, section B "Styling").
+ * Apps import this at the top of their globals.css:
+ *
+ *   @import 'tailwindcss';
+ *   @import '@ecm/tailwind-config/theme.css';
+ */
+
+@theme {
+  /* Colour tokens — tenants override via inline CSS variables on the body. */
+  --color-brand-50: oklch(97% 0.02 265);
+  --color-brand-500: oklch(55% 0.17 265);
+  --color-brand-600: oklch(48% 0.17 265);
+  --color-brand-700: oklch(42% 0.15 265);
+  --color-brand-900: oklch(28% 0.10 265);
+
+  /* Typography */
+  --font-sans: 'Inter', 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
+  --font-bn: 'Hind Siliguri', 'Noto Sans Bengali', ui-sans-serif, sans-serif;
+
+  /* Radii, shadows */
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}

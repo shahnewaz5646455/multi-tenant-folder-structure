@@ -1,0 +1,38 @@
+{
+  "name": "@ecm/storefront",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3002",
+    "build": "next build",
+    "start": "next start --port 3002",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ecm/api-client": "*",
+    "@ecm/format": "*",
+    "@ecm/i18n": "*",
+    "@ecm/page-schema": "*",
+    "@ecm/tailwind-config": "*",
+    "@ecm/tenant": "*",
+    "@ecm/tracking": "*",
+    "@ecm/validation": "*",
+    "next": "^16.0.0",
+    "next-intl": "^4.0.0",
+    "nuqs": "^2.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.23.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@ecm/eslint-config": "*",
+    "@ecm/typescript-config": "*",
+    "@types/node": "^20.11.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}

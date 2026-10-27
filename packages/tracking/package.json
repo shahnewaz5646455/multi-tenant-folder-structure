@@ -1,0 +1,11 @@
+{
+  "name": "@ecm/tracking",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "lint": "eslint .", "typecheck": "tsc --noEmit" },
+  "dependencies": { "@ecm/api-client": "*" },
+  "devDependencies": { "@ecm/eslint-config": "*", "@ecm/typescript-config": "*" }
+}
