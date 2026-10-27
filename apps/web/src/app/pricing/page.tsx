@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { CompareSection } from './_components/compare-section';
+import { FaqSection } from './_components/faq-section';
 import { FeesSection } from './_components/fees-section';
 import { PlansSection } from './_components/plans-section';
 
@@ -13,6 +14,7 @@ export default function PricingPage(): JSX.Element {
         <PlansSection />
         <FeesSection />
         <CompareSection />
+        <FaqSection />
       </main>
       <SiteFooter />
     </>

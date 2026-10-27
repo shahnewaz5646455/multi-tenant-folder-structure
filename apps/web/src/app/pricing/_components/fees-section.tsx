@@ -4,7 +4,7 @@ import { FeeTile } from './fee-tile';
 
 export function FeesSection(): JSX.Element {
   return (
-    <section className="w-full bg-background-canvas">
+    <section className="w-full bg-background">
       <div className="mx-auto w-full max-w-[1440px] px-4 pb-6 pt-6 sm:px-6 lg:px-16 lg:pt-14 xl:px-[120px]">
         <div className="flex w-full flex-col items-start gap-6 rounded-lg border border-border bg-background px-5 py-5 sm:px-6 lg:flex-row lg:items-center">
           <div className="flex w-full flex-col gap-1 lg:w-[280px] lg:shrink-0">
