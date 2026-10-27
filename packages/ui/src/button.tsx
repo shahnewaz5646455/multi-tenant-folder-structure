@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, JSX } from 'react';
-import { cn } from './cn.ts';
+import { cn } from './cn';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'secondary' | 'ghost';
