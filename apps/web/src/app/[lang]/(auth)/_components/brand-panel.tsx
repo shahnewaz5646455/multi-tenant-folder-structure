@@ -14,10 +14,7 @@ export function BrandPanel(): JSX.Element {
   // w-[560px] matches Figma's fixed brand-panel art direction width.
   return (
     <aside className="hidden min-h-screen w-[560px] shrink-0 flex-col gap-8 overflow-hidden bg-primary px-16 py-14 text-primary-foreground lg:flex">
-      <Logo
-        variant="full"
-        className="[&>span:last-child]:text-base [&>span:last-child]:font-semibold [&>span:last-child]:text-primary-foreground"
-      />
+      <Logo variant="full" tone="on-brand" />
 
       <div className="flex-1" />
 
@@ -32,7 +29,7 @@ export function BrandPanel(): JSX.Element {
         ))}
       </ul>
 
-      <blockquote className="flex flex-col gap-2 rounded-lg bg-white/10 px-5 py-4">
+      <blockquote className="flex flex-col gap-2 rounded-lg bg-white/[0.12] px-5 py-4">
         <p className="text-base leading-6">&ldquo;{t('testimonial.quote')}&rdquo;</p>
         <footer className="text-xs leading-4 opacity-90">{t('testimonial.attribution')}</footer>
       </blockquote>
