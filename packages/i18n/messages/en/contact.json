@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Contact Ecom Manager",
+    "description": "Talk to a real person — questions about plans, moving from another platform or a big catalog. Our Dhaka team replies within one working day."
+  },
+  "overline": "CONTACT",
+  "title": "Talk to a real person",
+  "subtitle": "Questions about plans, moving from another platform or a big catalog? Our team in Dhaka replies within one working day.",
+  "methods": {
+    "whatsapp": {
+      "label": "WhatsApp & phone",
+      "value": "09XXX-XXXXXX · 9 AM – 10 PM, every day"
+    },
+    "email": {
+      "label": "Email",
+      "value": "sales@ecommanager.com.bd · support@ecommanager.com.bd"
+    },
+    "dhaka": {
+      "label": "Dhaka office (HQ)",
+      "value": "Level 7, House 42, Road 11, Banani, Dhaka 1213"
+    },
+    "chattogram": {
+      "label": "Chattogram office",
+      "value": "GEC Circle, Chattogram 4000"
+    }
+  },
+  "form": {
+    "title": "Send us a message",
+    "name": {
+      "label": "Your name",
+      "placeholder": "Shila Das"
+    },
+    "mobile": {
+      "label": "Mobile number",
+      "placeholder": "01XXX-XXX204"
+    },
+    "email": {
+      "label": "Email",
+      "optional": "optional",
+      "placeholder": "shila@nakshikantha.com.bd"
+    },
+    "topic": {
+      "label": "I want to talk about",
+      "options": {
+        "sales": "Plans & pricing (sales)",
+        "migration": "Moving from another platform",
+        "support": "Help with my store",
+        "partnership": "Partnership or press"
+      }
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "We sell handmade nakshi kantha on Facebook with about 300 orders a month. Can you help us move our catalog?"
+    },
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "note": "Your message creates a sales lead our team sees right away. We never share your number.",
+    "success": "Thanks — your message is on its way. We will reply within one working day.",
+    "errors": {
+      "nameRequired": "Please add your name.",
+      "mobileRequired": "Please add a mobile number.",
+      "mobileInvalid": "Enter a valid Bangladeshi mobile number.",
+      "emailInvalid": "Enter a valid email address.",
+      "messageRequired": "Please tell us a little about what you need."
+    }
+  }
+}
