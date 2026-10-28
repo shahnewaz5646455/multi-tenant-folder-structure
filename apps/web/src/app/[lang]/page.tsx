@@ -7,7 +7,6 @@ import { FaqSection } from './_components/faq-section';
 import { GoLiveSection } from './_components/go-live-section';
 import { HeroSection } from './_components/hero-section';
 import { LiveStatsSection } from './_components/live-stats-section';
-import { PartnersSection } from './_components/partners-section';
 import { TemplatesSection } from './_components/templates-section';
 import { TestimonialsSection } from './_components/testimonials-section';
 import { ToolkitSection } from './_components/toolkit-section';
@@ -25,7 +24,6 @@ export default async function HomePage({ params }: Props): Promise<JSX.Element> 
       <main>
         <HeroSection />
         <LiveStatsSection />
-        <PartnersSection />
         <ToolkitSection />
         <GoLiveSection />
         <TemplatesSection />
