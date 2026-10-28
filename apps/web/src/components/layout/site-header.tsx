@@ -17,7 +17,7 @@ export function SiteHeader(): JSX.Element {
         <div className="flex-1" />
         <Link
           href="/signup"
-          className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
+          className="inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
         >
           {t('startFree')}
         </Link>

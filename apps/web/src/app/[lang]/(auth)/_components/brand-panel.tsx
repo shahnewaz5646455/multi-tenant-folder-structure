@@ -2,9 +2,11 @@ import type { JSX } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Logo } from '@/components/layout/logo';
+import { Link } from '@/i18n/navigation';
 
 export function BrandPanel(): JSX.Element {
   const t = useTranslations('auth.brand');
+  const tNav = useTranslations('nav');
   const features = [
     t('features.liveFast'),
     t('features.payments'),
@@ -14,7 +16,9 @@ export function BrandPanel(): JSX.Element {
   // w-[560px] matches Figma's fixed brand-panel art direction width.
   return (
     <aside className="hidden min-h-screen w-[560px] shrink-0 flex-col gap-8 overflow-hidden bg-primary px-16 py-14 text-primary-foreground lg:flex">
-      <Logo variant="full" tone="on-brand" />
+      <Link href="/" aria-label={tNav('home')} className="w-fit">
+        <Logo variant="full" tone="on-brand" />
+      </Link>
 
       <div className="flex-1" />
 
