@@ -13,12 +13,12 @@ import { TestimonialsSection } from './_components/testimonials-section';
 import { ToolkitSection } from './_components/toolkit-section';
 
 type Props = {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ lang: string }>;
 };
 
 export default async function HomePage({ params }: Props): Promise<JSX.Element> {
-  const { locale } = await params;
-  setRequestLocale(locale);
+  const { lang } = await params;
+  setRequestLocale(lang);
   return (
     <>
       <SiteHeader />

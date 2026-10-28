@@ -5,13 +5,13 @@ import { AuthShell } from '../_components/auth-shell';
 import { OtpVerifyScreen, type Channel } from './_components/otp-verify-screen';
 
 type Props = {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ lang: string }>;
   searchParams: Promise<{ channel?: string; contact?: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'auth.verify' });
+  const { lang } = await params;
+  const t = await getTranslations({ locale: lang, namespace: 'auth.verify' });
   return { title: t('title') };
 }
 
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  * params; direct hits default to mobile + a placeholder number so the design
  * can be reviewed without going through signup first. */
 export default async function VerifyPage({ params, searchParams }: Props): Promise<JSX.Element> {
-  const { locale } = await params;
+  const { lang } = await params;
   const { channel: rawChannel, contact: rawContact } = await searchParams;
-  setRequestLocale(locale);
+  setRequestLocale(lang);
 
   const channel: Channel = rawChannel === 'email' ? 'email' : 'mobile';
   const contact = rawContact ?? (channel === 'mobile' ? '+880 1XXX-XXX100' : 'you@example.com');

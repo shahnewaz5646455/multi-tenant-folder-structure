@@ -5,7 +5,7 @@ description: "Add bilingual (English + Bangla) localization to any page in Ecom 
 
 # Ecom Manager Localization
 
-Work as a senior frontend engineer who knows this project's i18n system inside out. The infrastructure (next-intl, `[locale]` routing, proxy, locale switcher, font switching) is **already built** — your job is to add a new page or section to that system **without re-doing or breaking the plumbing**.
+Work as a senior frontend engineer who knows this project's i18n system inside out. The infrastructure (next-intl, `[lang]` routing, proxy, locale switcher, font switching) is **already built** — your job is to add a new page or section to that system **without re-doing or breaking the plumbing**.
 
 Follow the eight phases below in order. Do not skip. End with the QA report in Phase 8.
 
@@ -24,16 +24,16 @@ Follow the eight phases below in order. Do not skip. End with the QA report in P
 - `src/index.ts` — exports `LOCALES`, `DEFAULT_LOCALE`, `TIMEZONE`, `isLocale`, `loadMessages`. Contains `NAMESPACES = ['common', 'nav', 'footer', 'home', 'pricing']`. **Edit only to add a new namespace.**
 - `messages/en/<ns>.json` and `messages/bn/<ns>.json` — mirrored structures. **Nested JSON objects**, not flat dot-keys.
 
-**Page structure**: Every page lives under `apps/web/src/app/[locale]/`. Every page file calls:
+**Page structure**: Every page lives under `apps/web/src/app/[lang]/`. Every page file calls:
 ```tsx
-export default async function MyPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  setRequestLocale(locale);  // enables SSG for this page
+export default async function MyPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  setRequestLocale(lang);  // enables SSG for this page
   // ...
 }
 ```
 
-**Font switching**: `app/[locale]/layout.tsx` picks `font-sans` (Inter) for en and `font-bn` (Noto Sans Bengali → Hind Siliguri) for bn based on `locale`. Bengali digits use the Bengali font via `font-bn` on body. **Do not touch** per page.
+**Font switching**: `app/[lang]/layout.tsx` picks `font-sans` (Inter) for en and `font-bn` (Noto Sans Bengali → Hind Siliguri) for bn based on `lang`. Bengali digits use the Bengali font via `font-bn` on body. **Do not touch** per page.
 
 **Locale switcher**: `components/layout/locale-switcher.tsx`. Already mounted in `SiteHeader` and `MobileNav`. **Do not touch** unless the UX changes.
 
@@ -45,7 +45,7 @@ Do this before writing any code.
 
 1. **Enumerate the page's component tree.** Open the `page.tsx` and every `_components/*.tsx` it imports. Also open every `components/marketing/*` and `components/layout/*` leaf used. Make a tree:
    ```
-   DashboardPage (app/[locale]/dashboard/page.tsx)
+   DashboardPage (app/[lang]/dashboard/page.tsx)
    ├── SiteHeader                   (shared, already translated — skip)
    ├── OverviewSection              (_components)
    │   ├── StatCard                 (shared leaf — check for hard-coded text!)
@@ -357,7 +357,7 @@ export default async function MyPage({
 - ❌ Hard-code any user-facing string, even temporarily. If you need a placeholder, create the JSON key first.
 - ❌ Use `next/link` or `useRouter` from `next/navigation`. **Always** use the wrappers from `@/i18n/navigation`.
 - ❌ Edit `apps/web/src/i18n/routing.ts`, `src/i18n/request.ts`, `src/i18n/navigation.ts`, or `src/proxy.ts` for new pages — these are infrastructure. Only touch them to add a new locale.
-- ❌ Edit `apps/web/src/app/[locale]/layout.tsx` for new pages. The fonts, provider, and `<html lang>` are handled.
+- ❌ Edit `apps/web/src/app/[lang]/layout.tsx` for new pages. The fonts, provider, and `<html lang>` are handled.
 - ❌ Add a new NAMESPACE without updating `packages/i18n/src/index.ts` — the import loop ignores files not in that list.
 - ❌ Use flat dot-keys like `"nav.pricing": "Pricing"` in JSON. Use nested objects: `{ "nav": { "pricing": "Pricing" } }`.
 - ❌ Call `useTranslations` inside shared `components/marketing/*` or `components/layout/*` leaves. Pass labels as props from the section component instead.
@@ -373,9 +373,9 @@ export default async function MyPage({
 ## Reference examples (read these before starting)
 
 - **Simple namespace, flat structure**: `packages/i18n/messages/{en,bn}/nav.json` + consumer `apps/web/src/components/layout/site-header.tsx`.
-- **Deeply nested with iterable items**: `packages/i18n/messages/{en,bn}/home.json` → `toolkit.features.*` + consumer `app/[locale]/_components/toolkit-section.tsx`.
+- **Deeply nested with iterable items**: `packages/i18n/messages/{en,bn}/home.json` → `toolkit.features.*` + consumer `app/[lang]/_components/toolkit-section.tsx`.
 - **Interpolation**: `messages/{en,bn}/footer.json` → `copyright` + consumer `components/layout/site-footer.tsx`.
-- **Arrays via `t.raw()`**: `messages/{en,bn}/pricing.json` → `plans.*.features` + consumer `app/[locale]/pricing/_components/plans-section.tsx`.
+- **Arrays via `t.raw()`**: `messages/{en,bn}/pricing.json` → `plans.*.features` + consumer `app/[lang]/pricing/_components/plans-section.tsx`.
 - **Optional keys via `t.has()`**: same consumer, see `badge` and `priceSuffix` handling.
 - **Boolean sentinel compare cells**: `messages/{en,bn}/pricing.json` → `compare.groups.*.rows.*.values` + consumer `pricing/_components/compare-cell.tsx` + table components.
 - **Props-driven leaf refactor**: `components/marketing/dashboard-preview.tsx` (took `todayLabel`, `liveLabel`), `components/marketing/sales-split-card.tsx` (took `onlineLabel`, `codLabel`), `components/marketing/theme-card.tsx` (took `previewLabel`).

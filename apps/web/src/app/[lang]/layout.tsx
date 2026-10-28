@@ -39,27 +39,27 @@ export const metadata: Metadata = {
   description: 'Launch, sell, and scale with Ecom Manager.',
 };
 
-export function generateStaticParams(): { locale: Locale }[] {
-  return LOCALES.map((locale) => ({ locale }));
+export function generateStaticParams(): { lang: Locale }[] {
+  return LOCALES.map((locale) => ({ lang: locale }));
 }
 
 type Props = {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ lang: string }>;
 };
 
 export default async function LocaleLayout({ children, params }: Props): Promise<React.ReactElement> {
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) notFound();
-  setRequestLocale(locale);
+  const { lang } = await params;
+  if (!hasLocale(routing.locales, lang)) notFound();
+  setRequestLocale(lang);
   const messages = await getMessages();
 
-  const bodyFont = locale === 'bn' ? 'font-bn' : 'font-sans';
+  const bodyFont = lang === 'bn' ? 'font-bn' : 'font-sans';
 
   return (
-    <html lang={locale} className={`${inter.variable} ${notoBengali.variable} ${hindSiliguri.variable}`}>
+    <html lang={lang} className={`${inter.variable} ${notoBengali.variable} ${hindSiliguri.variable}`}>
       <body className={`${bodyFont} antialiased`}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={lang} messages={messages}>
           {children}
         </NextIntlClientProvider>
       </body>

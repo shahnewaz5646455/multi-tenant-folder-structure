@@ -5,13 +5,13 @@ import { AuthShell } from '../_components/auth-shell';
 import { LoginForm } from './_components/login-form';
 
 type Props = {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ lang: string }>;
   searchParams: Promise<{ store?: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'auth.logIn' });
+  const { lang } = await params;
+  const t = await getTranslations({ locale: lang, namespace: 'auth.logIn' });
   return { title: t('title') };
 }
 
@@ -19,9 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  * ("Log in to manage Rahim Fashion.") so returning merchants see which store
  * they're signing into. Direct hits with no param show the generic subtitle. */
 export default async function LoginPage({ params, searchParams }: Props): Promise<JSX.Element> {
-  const { locale } = await params;
+  const { lang } = await params;
   const { store } = await searchParams;
-  setRequestLocale(locale);
+  setRequestLocale(lang);
 
   return (
     <AuthShell>
