@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 import { useTranslations } from 'next-intl';
 import { FaqAccordion } from '@/components/marketing/faq-accordion';
 import { FAQ_CTA_HREF, FAQ_ENTRY_KEYS } from '@/config/landing-faq';
+import { Link } from '@/i18n/navigation';
 
 export function FaqSection(): JSX.Element {
   const t = useTranslations('home.faq');
@@ -19,12 +20,12 @@ export function FaqSection(): JSX.Element {
           <p className="text-success text-left">{t('overline')}</p>
           <h2 className="display-lg text-foreground">{t('title')}</h2>
           <p className="text-sm leading-5 text-muted-foreground">{t('support')}</p>
-          <a
+          <Link
             href={FAQ_CTA_HREF}
             className="mt-1 inline-flex h-9 w-fit items-center justify-center rounded-md border border-border-strong bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-muted"
           >
             {t('cta')}
-          </a>
+          </Link>
         </div>
 
         {/* Right column — single-select accordion with animated height */}

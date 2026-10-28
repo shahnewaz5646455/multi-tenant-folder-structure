@@ -2,4 +2,4 @@
 export const FAQ_ENTRY_KEYS = ['card', 'domain', 'providers', 'fees', 'bangla'] as const;
 export type FaqEntryKey = (typeof FAQ_ENTRY_KEYS)[number];
 
-export const FAQ_CTA_HREF = '#';
+export const FAQ_CTA_HREF = '/contact';
