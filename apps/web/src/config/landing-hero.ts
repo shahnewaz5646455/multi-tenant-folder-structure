@@ -9,7 +9,7 @@ export const HERO_TRUST_KEYS = ['noCard', 'freeForever', 'liveIn60'] as const;
 export type HeroTrustKey = (typeof HERO_TRUST_KEYS)[number];
 
 export const HERO_CTAS = {
-  primary: { href: '#' },
+  primary: { href: '/signup' },
   secondary: { href: '#' },
 } as const;
 

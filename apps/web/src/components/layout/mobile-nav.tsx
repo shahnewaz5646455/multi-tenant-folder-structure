@@ -105,7 +105,7 @@ export function MobileNav({ items }: MobileNavProps): JSX.Element {
         {/* Sticky footer: auth CTAs */}
         <div className="flex flex-col gap-3 border-t border-border bg-background-subdued px-4 py-4">
           <Link
-            href="#"
+            href="/login"
             onClick={close}
             className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border-strong bg-background text-sm font-medium text-foreground hover:bg-muted"
           >
@@ -113,7 +113,7 @@ export function MobileNav({ items }: MobileNavProps): JSX.Element {
             {t('logIn')}
           </Link>
           <Link
-            href="#"
+            href="/signup"
             onClick={close}
             className="inline-flex h-11 items-center justify-center rounded-md bg-primary text-sm font-medium text-primary-foreground hover:bg-brand-700"
           >

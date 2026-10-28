@@ -11,6 +11,7 @@ import {
   HERO_KPI_KEYS,
   HERO_TRUST_KEYS,
 } from '@/config/landing-hero';
+import { Link } from '@/i18n/navigation';
 
 export function HeroSection(): JSX.Element {
   const t = useTranslations('home.hero');
@@ -36,18 +37,18 @@ export function HeroSection(): JSX.Element {
           <p className="text-base leading-6 text-muted-foreground">{t('subhead')}</p>
 
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <a
+            <Link
               href={HERO_CTAS.primary.href}
               className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-brand-700"
             >
               {t('primaryCta')}
-            </a>
-            <a
+            </Link>
+            <Link
               href={HERO_CTAS.secondary.href}
               className="inline-flex h-11 items-center justify-center rounded-md border border-border-strong bg-background px-5 py-3 text-sm font-medium text-foreground hover:bg-muted"
             >
               {t('secondaryCta')}
-            </a>
+            </Link>
           </div>
 
           <ul className="flex flex-col gap-2 text-xs leading-4 text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-5 sm:gap-y-2">

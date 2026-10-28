@@ -1,4 +1,4 @@
 export const CTA_BAND_HREFS = {
-  primary: '#',
+  primary: '/signup',
   secondary: '#',
 } as const;

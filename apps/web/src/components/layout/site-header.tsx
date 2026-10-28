@@ -16,7 +16,7 @@ export function SiteHeader(): JSX.Element {
         <Logo variant="full" />
         <div className="flex-1" />
         <Link
-          href="#"
+          href="/signup"
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
         >
           {t('startFree')}
@@ -43,13 +43,13 @@ export function SiteHeader(): JSX.Element {
         <div className="flex-1" />
         <LocaleSwitcher variant="desktop" />
         <Link
-          href="#"
+          href="/login"
           className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium text-foreground hover:bg-muted"
         >
           {t('logIn')}
         </Link>
         <Link
-          href="#"
+          href="/signup"
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-700"
         >
           {t('createYourStore')}

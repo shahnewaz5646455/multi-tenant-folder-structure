@@ -1,6 +1,7 @@
 import type { JSX } from 'react';
 import { useTranslations } from 'next-intl';
 import { CTA_BAND_HREFS } from '@/config/landing-cta';
+import { Link } from '@/i18n/navigation';
 
 export function CtaBandSection(): JSX.Element {
   const t = useTranslations('home.ctaBand');
@@ -15,19 +16,19 @@ export function CtaBandSection(): JSX.Element {
         </p>
 
         <div className="mt-1 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
-          <a
+          <Link
             href={CTA_BAND_HREFS.primary}
             className="inline-flex h-11 items-center justify-center rounded-md border border-border-strong bg-background px-5 py-3 text-sm font-medium text-foreground hover:bg-muted"
           >
             {t('primary')}
-          </a>
+          </Link>
           {/* Secondary CTA hidden on mobile per Figma */}
-          <a
+          <Link
             href={CTA_BAND_HREFS.secondary}
             className="hidden h-11 items-center justify-center rounded-md px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-brand-700 sm:inline-flex"
           >
             {t('secondary')}
-          </a>
+          </Link>
         </div>
       </div>
     </section>
