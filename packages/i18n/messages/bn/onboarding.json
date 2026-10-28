@@ -1,0 +1,131 @@
+{
+  "shell": {
+    "needHelp": "সাহায্য দরকার? 09XXX-XXXXXX",
+    "progressAria": "অনবোর্ডিং অগ্রগতি",
+    "stepLabel": "ধাপ {current}/{total}",
+    "steps": {
+      "account": {
+        "label": "অ্যাকাউন্ট",
+        "done": "সম্পন্ন",
+        "now": "এখন",
+        "upcoming": "~৬০ সে"
+      },
+      "store": {
+        "label": "আপনার দোকান",
+        "done": "সম্পন্ন",
+        "now": "এখন",
+        "upcoming": "~৬০ সে"
+      },
+      "ready": {
+        "label": "প্রস্তুত",
+        "done": "সম্পন্ন",
+        "now": "এখন",
+        "upcoming": "~৬০ সে"
+      }
+    }
+  },
+  "storeDetails": {
+    "title": "আপনার দোকান সম্পর্কে বলুন",
+    "subtitle": "আপনার ব্যবসার সাথে মানানসই থিম, পেমেন্ট ও ডেলিভারি সেটআপ করে দিচ্ছি।",
+    "field": {
+      "name": {
+        "label": "দোকানের নাম",
+        "placeholder": "রহিম ফ্যাশন"
+      },
+      "slug": {
+        "label": "দোকানের লিঙ্ক",
+        "placeholder": "yourstore",
+        "suffix": ".ecom.bd",
+        "available": "{slug}.ecom.bd ফ্রি · পরে নিজের ডোমেইনও যুক্ত করতে পারবেন",
+        "unavailable": "{slug}.ecom.bd পাওয়া যাচ্ছে না · অন্য নাম চেষ্টা করুন",
+        "checking": "যাচাই করা হচ্ছে…",
+        "tooShort": "লিঙ্কে কমপক্ষে ৩টি অক্ষর লাগবে",
+        "invalid": "শুধু ছোট হাতের অক্ষর, সংখ্যা ও হাইফেন ব্যবহার করুন"
+      },
+      "country": {
+        "label": "দেশ",
+        "options": {
+          "BD": "বাংলাদেশ"
+        }
+      },
+      "language": {
+        "label": "দোকানের ভাষা",
+        "options": {
+          "en-bn": "English + বাংলা",
+          "bn": "শুধু বাংলা",
+          "en": "শুধু English"
+        }
+      },
+      "category": {
+        "label": "আপনি কী বিক্রি করেন?",
+        "options": {
+          "fashion": "পোশাক ও ফ্যাশন",
+          "electronics": "ইলেকট্রনিক্স",
+          "grocery": "গ্রোসারি ও অর্গানিক",
+          "cosmetics": "কসমেটিক্স ও বিউটি",
+          "books": "বই ও স্টেশনারি",
+          "sports": "খেলনা ও স্পোর্টস",
+          "digital": "ডিজিটাল পণ্য",
+          "other": "অন্য কিছু"
+        }
+      },
+      "channel": {
+        "label": "এখন কোথায় বিক্রি করছেন?",
+        "options": {
+          "social": "Facebook / Instagram",
+          "physical": "ফিজিক্যাল শপ",
+          "both": "দুটোতেই",
+          "starting": "সবে শুরু করছি"
+        }
+      }
+    },
+    "errors": {
+      "nameRequired": "আপনার দোকানের নাম লিখুন",
+      "slugRequired": "একটি দোকানের লিঙ্ক বেছে নিন",
+      "slugInvalid": "শুধু ছোট হাতের অক্ষর, সংখ্যা ও হাইফেন ব্যবহার করুন",
+      "slugTooShort": "লিঙ্কে কমপক্ষে ৩টি অক্ষর লাগবে",
+      "categoryRequired": "আপনি কী বিক্রি করেন তা বেছে নিন",
+      "channelRequired": "এখন কোথায় বিক্রি করছেন তা জানান"
+    },
+    "submit": "আমার দোকান তৈরি করুন",
+    "submitting": "দোকান তৈরি হচ্ছে…"
+  },
+  "settingUp": {
+    "title": "{storeName} সেট করা হচ্ছে…",
+    "subtitle": "সাধারণত এক মিনিটের কম সময় লাগে। এই ট্যাব বন্ধ করবেন না।",
+    "progressAria": "দোকান প্রস্তুতির অগ্রগতি",
+    "percent": "{percent}%",
+    "timeLeft": "আরও প্রায় {seconds} সেকেন্ড",
+    "steps": {
+      "createStore": {
+        "label": "দোকান তৈরি হচ্ছে",
+        "duration": "{seconds} সে"
+      },
+      "reserveDomain": {
+        "label": "{domain} সংরক্ষিত হচ্ছে",
+        "duration": "{seconds} সে"
+      },
+      "installTheme": {
+        "label": "{theme} থিম ইনস্টল হচ্ছে",
+        "note": "{audience}-এর জন্য বাছাই করা · {seconds} সে",
+        "audience": {
+          "fashion": "ফ্যাশন বিক্রেতাদের",
+          "electronics": "ইলেকট্রনিক্স বিক্রেতাদের",
+          "grocery": "গ্রোসারি বিক্রেতাদের",
+          "cosmetics": "কসমেটিক্স বিক্রেতাদের",
+          "books": "বইয়ের বিক্রেতাদের",
+          "sports": "স্পোর্টস বিক্রেতাদের",
+          "digital": "ডিজিটাল পণ্য বিক্রেতাদের",
+          "other": "আপনার"
+        }
+      },
+      "payments": {
+        "label": "বিকাশ ও ক্যাশ-অন-ডেলিভারি চালু হচ্ছে"
+      },
+      "https": {
+        "label": "HTTPS দিয়ে আপনার দোকান সুরক্ষিত হচ্ছে"
+      }
+    },
+    "tip": "পরবর্তী ধাপ: আপনার প্রথম পণ্য যোগ করুন — ছবি থেকে AI নিজেই শিরোনাম ও বিবরণ লিখে দেবে।"
+  }
+}

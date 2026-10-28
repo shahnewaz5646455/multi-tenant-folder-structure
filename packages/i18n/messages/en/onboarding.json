@@ -1,0 +1,131 @@
+{
+  "shell": {
+    "needHelp": "Need help? 09XXX-XXXXXX",
+    "progressAria": "Onboarding progress",
+    "stepLabel": "Step {current} of {total}",
+    "steps": {
+      "account": {
+        "label": "Account",
+        "done": "Done",
+        "now": "Now",
+        "upcoming": "~60 s"
+      },
+      "store": {
+        "label": "Your store",
+        "done": "Done",
+        "now": "Now",
+        "upcoming": "~60 s"
+      },
+      "ready": {
+        "label": "Ready",
+        "done": "Done",
+        "now": "Now",
+        "upcoming": "~60 s"
+      }
+    }
+  },
+  "storeDetails": {
+    "title": "Tell us about your store",
+    "subtitle": "We’ll set up a theme, payments and delivery that fit your business.",
+    "field": {
+      "name": {
+        "label": "Store name",
+        "placeholder": "Rahim Fashion"
+      },
+      "slug": {
+        "label": "Store link",
+        "placeholder": "yourstore",
+        "suffix": ".ecom.bd",
+        "available": "{slug}.ecom.bd is available · you can connect your own domain later",
+        "unavailable": "{slug}.ecom.bd is taken · try another name",
+        "checking": "Checking availability…",
+        "tooShort": "Store link needs at least 3 characters",
+        "invalid": "Use lowercase letters, numbers and hyphens only"
+      },
+      "country": {
+        "label": "Country",
+        "options": {
+          "BD": "Bangladesh"
+        }
+      },
+      "language": {
+        "label": "Store language",
+        "options": {
+          "en-bn": "English + বাংলা",
+          "bn": "বাংলা only",
+          "en": "English only"
+        }
+      },
+      "category": {
+        "label": "What do you sell?",
+        "options": {
+          "fashion": "Fashion & clothing",
+          "electronics": "Electronics",
+          "grocery": "Grocery & organic",
+          "cosmetics": "Cosmetics & beauty",
+          "books": "Books & stationery",
+          "sports": "Sports & toys",
+          "digital": "Digital products",
+          "other": "Something else"
+        }
+      },
+      "channel": {
+        "label": "Where do you sell today?",
+        "options": {
+          "social": "Facebook / Instagram",
+          "physical": "Physical shop",
+          "both": "Both",
+          "starting": "Just starting"
+        }
+      }
+    },
+    "errors": {
+      "nameRequired": "Enter your store name",
+      "slugRequired": "Choose a store link",
+      "slugInvalid": "Use lowercase letters, numbers and hyphens only",
+      "slugTooShort": "Store link needs at least 3 characters",
+      "categoryRequired": "Pick what you sell today",
+      "channelRequired": "Tell us where you sell today"
+    },
+    "submit": "Create my store",
+    "submitting": "Creating your store…"
+  },
+  "settingUp": {
+    "title": "Setting up {storeName}…",
+    "subtitle": "This usually takes under a minute. Don’t close this tab.",
+    "progressAria": "Store provisioning progress",
+    "percent": "{percent}%",
+    "timeLeft": "About {seconds, plural, one {# second} other {# seconds}} left",
+    "steps": {
+      "createStore": {
+        "label": "Creating your store",
+        "duration": "{seconds} s"
+      },
+      "reserveDomain": {
+        "label": "Reserving {domain}",
+        "duration": "{seconds} s"
+      },
+      "installTheme": {
+        "label": "Installing {theme} theme",
+        "note": "picked for {audience} · {seconds} s",
+        "audience": {
+          "fashion": "fashion sellers",
+          "electronics": "electronics sellers",
+          "grocery": "grocery sellers",
+          "cosmetics": "beauty sellers",
+          "books": "booksellers",
+          "sports": "sports sellers",
+          "digital": "digital sellers",
+          "other": "you"
+        }
+      },
+      "payments": {
+        "label": "Turning on bKash & Cash on Delivery"
+      },
+      "https": {
+        "label": "Securing your store with HTTPS"
+      }
+    },
+    "tip": "Next: add your first product — our AI writer drafts the title and description from a photo."
+  }
+}
