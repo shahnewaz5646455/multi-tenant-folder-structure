@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState, type JSX } from 'react';
+import { useEffect, useState, type JSX } from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import { Plus, Minus } from 'lucide-react';
 import { cn } from '@ecm/ui/cn';
@@ -17,11 +17,6 @@ export type FaqAccordionProps = {
  * Single-select accordion: opening one row closes any other.
  * Uses Radix for state + keyboard nav; Tailwind keyframes drive the
  * height animation via Radix's --radix-accordion-content-height CSS var.
- *
- * Height stability: the container is pinned to its tallest ever measured
- * height (via a ResizeObserver). Switching to a shorter answer therefore
- * leaves blank space inside the accordion rather than letting the footer
- * jump upward.
  */
 export function FaqAccordion({
   entries,
@@ -32,9 +27,6 @@ export function FaqAccordion({
     defaultOpenIndex >= 0 && defaultOpenIndex < entries.length ? `item-${defaultOpenIndex}` : '',
   );
   const [animated, setAnimated] = useState(false);
-  const [minHeight, setMinHeight] = useState<number | undefined>(undefined);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const maxSeenRef = useRef(0);
 
   // Enable animations only after mount so the default-open row is
   // instantly visible rather than animating itself open on first paint.
@@ -43,32 +35,13 @@ export function FaqAccordion({
     return () => cancelAnimationFrame(id);
   }, []);
 
-  // Track the tallest size the accordion has ever reached and lock the
-  // container min-height to it, so opening a shorter answer doesn't let
-  // the page below shrink.
-  useLayoutEffect(() => {
-    const el = rootRef.current;
-    if (!el || typeof ResizeObserver === 'undefined') return;
-    const observer = new ResizeObserver(() => {
-      const h = el.offsetHeight;
-      if (h > maxSeenRef.current) {
-        maxSeenRef.current = h;
-        setMinHeight(h);
-      }
-    });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <Accordion.Root
-      ref={rootRef}
       type="single"
       collapsible
       value={value}
       onValueChange={setValue}
       className={cn('flex w-full flex-col', className)}
-      style={minHeight ? { minHeight } : undefined}
     >
       {entries.map((entry, i) => (
         <Accordion.Item
